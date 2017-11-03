@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import {AgentService} from './agent.service';
+
 import { AppComponent } from './app.component';
 import { AgentInfoComponent } from './agent-info.component';
 import {MyAgentComponent} from './my-agent.component';
@@ -20,7 +22,7 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers:[AgentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

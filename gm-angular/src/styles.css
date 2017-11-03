@@ -1,21 +1,19 @@
 @import "assets/bootstrap/bootstrap.min.css";
 
 body{
-	padding:0.5em;
+	/*padding:0.5em;*/
 }
 ul,li,h1,h2,h3,h4,h5,h6{
 	padding:0;
 	margin:0;
 	list-style: none;
 }
-a:hover{
-	text-decoration: none;
-}
-a:visited{
+a,a:hover,a:visited{
 	text-decoration: none;
 }
 h2{
 	padding:5px;
-  background:#B7D8F8;
+	color:#888;
+  background:#F5F7F9;
   margin-bottom: 1em;
 }

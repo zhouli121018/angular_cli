@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-
+import { OnInit } from '@angular/core';
+import {Agent} from './agent';
+import {AgentService} from './agent.service';
 export class Agent {
 	id:number;
 	name:string;
@@ -28,12 +30,15 @@ export class Agent {
 	</div>
 	`
 })
-export class MyAgentComponent {
+export class MyAgentComponent implements OnInit{
 	title = "我的代理";
-	agents:Agent[]=[
-      {id:1,name:'张三',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-      {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-      {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-	]
+	agents:Agent[];
+	constructor(private agentService:AgentService){}
+    getAgents():void{
+    	this.agents=this.agentService.getAgents();
+    }
+	ngOnInit(): void {
+	    this.getAgents();
+	}
 	
 }
