@@ -30,7 +30,7 @@ import { OnInit } from '@angular/core';
 	})
 export class MyVipComponent implements OnInit{
 	title = "我的会员";
-    vips:vip[];
+    vips:Vip[];
     constructor(private agentService:AgentService){}
     getVips():void {
     	this.vips = this.agentService.getVips();
