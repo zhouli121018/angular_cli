@@ -5,7 +5,10 @@ import { OnInit } from '@angular/core';
 @Component({
 	selector:'my-vip',
 	template:`
-      <h2>{{title}}</h2>
+      <h2>
+      	<span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+      </h2>
       <div>
       	<table class="table table-bordered table-responsive table-striped">
 			<tr>

@@ -4,7 +4,10 @@ import {Component} from '@angular/core';
 	selector:'agent-info',
 	styleUrls:['./agent-info.component.css'],
 	template:`
-	<h2>{{title}}</h2>
+	<h2>
+		<span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+	</h2>
     <div>
     	<table class="table table-bordered table-responsive table-striped">
 			<tr>

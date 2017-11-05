@@ -7,7 +7,10 @@ import {AgentService} from './agent.service';
 	selector:'my-agent',
 	styleUrls:['./my-agent.component.css'],
 	template:`
-	<h2>{{title}}</h2>
+	<h2>
+	    <span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+	</h2>
 	<div class=''>
 		<table class="table table-bordered table-responsive table-striped">
 			<tr>

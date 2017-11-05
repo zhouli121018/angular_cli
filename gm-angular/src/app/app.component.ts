@@ -6,8 +6,8 @@ import {Link} from './link'
   template:`
       <div id="title">
         <div class="log">
-          <img src="./assets/img/logo.png" class="img-responsive"/>
-          <p>珑擎管理后台</p>
+          <img src="./assets/img/admin.png" class="img-responsive"/>
+          <p>欢迎 admin 的到来！</p>
         </div>
         <div>
           <button type="button" class="btn btn-danger">退出</button>
