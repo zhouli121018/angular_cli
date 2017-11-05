@@ -2,13 +2,7 @@ import {Component} from '@angular/core';
 import { OnInit } from '@angular/core';
 import {Agent} from './agent';
 import {AgentService} from './agent.service';
-export class Agent {
-	id:number;
-	name:string;
-	uuid:number;
-	weixin:string;
-	tel:string;
-}
+
 @Component({
 	selector:'my-agent',
 	styleUrls:['./my-agent.component.css'],

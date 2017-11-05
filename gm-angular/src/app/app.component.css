@@ -29,7 +29,12 @@
   padding:0 1em 0 2em;
   line-height: 2;
 }
-#nav>ul>li>a:hover,#nav>ul>li li a:hover,#nav>ul>li li a.active{
+#nav>ul>li li li a{
+  background: #1F2D3D;
+  padding:0 1em 0 4em;
+  line-height: 2;
+}
+#nav>ul>li>a:hover,#nav>ul>li li a:hover,#nav>ul>li li li a:hover,#nav>ul>li li a.active{
   background: #20A0FF;
   color:#fff;
 }
@@ -55,4 +60,13 @@
 .log>img{
   width:5em;
   height:5em;
+}
+li>ul{
+  display:none;
+}
+li.active ul{
+  display:block;
+}
+li.active>a{
+  background: #f00;
 }

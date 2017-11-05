@@ -1,6 +1,6 @@
 export class Agent {
 	id:number;
-	uname:string;
+	name:string;
 	uuid:number;
 	weixin:string;
 	tel:string;
