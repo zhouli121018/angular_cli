@@ -25,11 +25,13 @@
   background:#324157;
 }
 #nav>ul>li li a{
+  font-size: 1.1em;
   background: #1F2D3D;
   padding:0 1em 0 2em;
   line-height: 2;
 }
 #nav>ul>li li li a{
+  font-size: 1em;
   background: #1F2D3D;
   padding:0 1em 0 4em;
   line-height: 2;
