@@ -12,6 +12,37 @@ import {AgentService} from './agent.service';
 		<img src="./assets/img/logo.png"/>
 	</h2>
 	<div class=''>
+    <div class="searchInfo">
+          <div class="row">
+        <div class="col-sm-3">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">起始时间</button>
+            </span>
+            <input type="date" class="form-control" placeholder="选择日期">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">结束时间</button>
+            </span>
+            <input type="date" class="form-control" placeholder="选择日期">
+          </div>
+        </div>
+            <div class="col-sm-3">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">代理邀请码</button>
+              </span>
+              <input type="number" class="form-control" placeholder="代理邀请码">
+            </div>
+        </div>
+        <div class="col-sm-3">
+              <button class="btn btn-success" type="button">查询</button>
+        </div>
+      </div>
+    </div>
 		<table class="table table-bordered table-responsive table-striped">
 			<tr>
 				<th>代理编号</th>
@@ -25,7 +56,6 @@ import {AgentService} from './agent.service';
 			</tr>
 		</table>
 	</div>
-	<app-tree [treelists]="menu"></app-tree>
 	`
 })
 export class MyAgentComponent implements OnInit{

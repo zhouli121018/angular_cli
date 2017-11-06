@@ -4,11 +4,7 @@ import {Vip} from './vip';
 import { OnInit } from '@angular/core';
 @Component({
 	selector:'my-vip',
-	styles:[`
-      .searchInfo{
-      	margin:1em 0;
-      }
-	`]
+	styles:[],
 	template:`
       <h2>
       	<span>{{title}}</span>
