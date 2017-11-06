@@ -25,7 +25,7 @@ import {AgentService} from './agent.service';
 			</tr>
 		</table>
 	</div>
-	
+	<app-tree [treelists]="menu"></app-tree>
 	`
 })
 export class MyAgentComponent implements OnInit{
@@ -44,12 +44,38 @@ export class MyAgentComponent implements OnInit{
         {
           name: '1.1.1',
           title: 'xxx',
+          items: [
+          	{
+          		title:"下级菜单",
+          		items:[
+          		{
+          name: '2.1.1',
+          title: '下级菜单1',
           items: []
+        },
+         {
+          name: '3.1.1',
+          title: '下级菜单2',
+          items: []
+        }]
+          }
+          ]
         }
       ]
     }, {
       title: '1.2',
-      items:[]
+      items:[
+      	 {
+          name: '2.1.1',
+          title: 'xxx',
+          items: []
+        },
+         {
+          name: '3.1.1',
+          title: 'xxx',
+          items: []
+        }
+      ]
     }
     ]
   }];

@@ -9,7 +9,8 @@ import { AgentInfoComponent } from './agent-info.component';
 import {MyAgentComponent} from './my-agent.component';
 import {MyVipComponent} from './my-vip.component';
 import {PagingComponent} from './paging.component';
-// import {TreeComponent} from './tree.component';
+import {TreeComponent} from './tree.component';
+import {NavComponent} from './nav.component';
 import {Agent} from './agent';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -20,7 +21,8 @@ import {AppRoutingModule} from './app-routing.module';
     MyAgentComponent,
     MyVipComponent,
     PagingComponent,
-    // TreeComponent
+    TreeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

@@ -16,21 +16,7 @@ import {Link} from './link'
       </div>
       <div class="content">
       <nav id="nav" >
-        <ul class="nav nav-pills nav-stacked">
-           <li *ngFor="let le of links" [class.active]="le===selectedUrl" (click)="onSelected(le)">
-             <a [routerLink]="le.link">{{le.des}} <span *ngIf="le.hasChild.length" class="caret"></span> </a>
-             <ul *ngIf="le.hasChild.length">
-               <li *ngFor="let l of le.hasChild" [class.active]="l===selectedUrl" (click)="onSelected(l)">
-                 <a [routerLink]="l.link" > {{l.des}} <span *ngIf="l.hasChild.length" class="caret"></span></a>
-                 <ul *ngIf="l.hasChild.length">
-                   <li *ngFor="let v of l.hasChild" [class.active]="v===selectedUrl" (click)="onSelected(v)">
-                     <a [routerLink]="v.link">{{v.des}}</a>
-                   </li>
-                 </ul>
-               </li>
-             </ul> 
-           </li>
-        </ul>
+          <app-nav [treelists]="links" class="navtree"></app-nav>
       </nav>
       <div>
         <router-outlet></router-outlet>
@@ -40,9 +26,68 @@ import {Link} from './link'
    
   `
 })
+ // <ul class="nav nav-pills nav-stacked">
+ //           <li *ngFor="let le of links" [class.active]="le===selectedUrl" (click)="onSelected(le)">
+ //             <a [routerLink]="le.link">{{le.des}} <span *ngIf="le.hasChild.length" class="caret"></span> </a>
+ //             <ul *ngIf="le.hasChild.length">
+ //               <li *ngFor="let l of le.hasChild" [class.active]="l===selectedUrl" (click)="onSelected(l)">
+ //                 <a [routerLink]="l.link" > {{l.des}} <span *ngIf="l.hasChild.length" class="caret"></span></a>
+ //                 <ul *ngIf="l.hasChild.length">
+ //                   <li *ngFor="let v of l.hasChild" [class.active]="v===selectedUrl" (click)="onSelected(v)">
+ //                     <a [routerLink]="v.link">{{v.des}}</a>
+ //                   </li>
+ //                 </ul>
+ //               </li>
+ //             </ul> 
+ //           </li>
+ //        </ul>
 export class AppComponent {
  
   selectedUrl:Link;
+ menu = [{
+    title: '1',
+    _open:true, //默认打开第一级
+    items: [{
+      title: '1.1',
+      items: [
+        {
+          name: '1.1.1',
+          title: 'xxx',
+          items: [
+            {
+              title:"下级菜单",
+              items:[
+              {
+          name: '2.1.1',
+          title: '下级菜单1',
+          items: []
+        },
+         {
+          name: '3.1.1',
+          title: '下级菜单2',
+          items: []
+        }]
+          }
+          ]
+        }
+      ]
+    }, {
+      title: '1.2',
+      items:[
+         {
+          name: '2.1.1',
+          title: 'xxx',
+          items: []
+        },
+         {
+          name: '3.1.1',
+          title: 'xxx',
+          items: []
+        }
+      ]
+    }
+    ]
+  }];
 
   links=[
     {
