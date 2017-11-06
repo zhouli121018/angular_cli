@@ -29,16 +29,27 @@ import { OnInit } from '@angular/core';
 			</tbody>
 		</table>
       </div>
+      <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+      <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
 	`
 	})
 export class MyVipComponent implements OnInit{
 	title = "我的会员";
     vips:Vip[];
     constructor(private agentService:AgentService){}
-    getVips():void {
-    	this.vips = this.agentService.getVips();
-    }
+   
     ngOnInit(): void {
-	    this.getVips();
+	    this.bindpage(1);
 	}
+	pageIndex = 1;
+	pageCount = 1;
+	totalNum = 0;
+	bindpage(event:number):void {
+		var vipsInfo = this.agentService.getVips();
+		this.vips = vipsInfo.slice((event-1)*10,event*10);
+		this.pageIndex = event;
+		this.totalNum = vipsInfo.length;
+		this.pageCount = Math.floor(vipsInfo.length/10)+1;
+    
+    }
 }

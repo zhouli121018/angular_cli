@@ -25,6 +25,7 @@ import {AgentService} from './agent.service';
 			</tr>
 		</table>
 	</div>
+	
 	`
 })
 export class MyAgentComponent implements OnInit{
@@ -33,7 +34,25 @@ export class MyAgentComponent implements OnInit{
 	constructor(private agentService:AgentService){}
     getAgents():void{
     	this.agents=this.agentService.getAgents();
+    };
+    menu = [{
+    title: '1',
+    _open:true, //默认打开第一级
+    items: [{
+      title: '1.1',
+      items: [
+        {
+          name: '1.1.1',
+          title: 'xxx',
+          items: []
+        }
+      ]
+    }, {
+      title: '1.2',
+      items:[]
     }
+    ]
+  }];
 	ngOnInit(): void {
 	    this.getAgents();
 	}
