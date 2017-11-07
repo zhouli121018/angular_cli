@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {Detail} from './detail';
-import { OnInit } from '@angular/core';
 import {AgentService} from './agent.service';
 
 @Component({
