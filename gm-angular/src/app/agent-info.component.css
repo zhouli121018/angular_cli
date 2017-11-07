@@ -1,0 +1,26 @@
+p.agent-info-tips{
+	background: #F2725E;
+	padding:.5em;
+}
+.basic-info{
+	margin-bottom: 1em;
+}
+.basic-info,.money-info{
+	border:1px solid #ddd;
+}
+.basic-info>p,.money-info>p{
+	background: #eee;
+	padding:.4em;
+	font-size: 1.2em;
+}
+.basic-info>div,.money-info>div{
+	padding:.5em;
+}
+.basic-info table td:nth-child(1),
+.basic-info table td:nth-child(3),
+.basic-info table td:nth-child(5),
+.money-info table td:nth-child(1),
+.money-info table td:nth-child(3),
+.money-info table td:nth-child(5){
+	text-align: right;
+}

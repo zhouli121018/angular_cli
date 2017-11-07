@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import {Agent} from './agent';
 import {AgentService} from './agent.service';
 
+
 @Component({
 	selector:'my-agent',
 	styleUrls:['./my-agent.component.css'],
@@ -56,6 +57,7 @@ import {AgentService} from './agent.service';
 			</tr>
 		</table>
 	</div>
+  <app-echarts ></app-echarts>
 	`
 })
 export class MyAgentComponent implements OnInit{
@@ -65,52 +67,13 @@ export class MyAgentComponent implements OnInit{
     getAgents():void{
     	this.agents=this.agentService.getAgents();
     };
-    menu = [{
-    title: '1',
-    _open:true, //默认打开第一级
-    items: [{
-      title: '1.1',
-      items: [
-        {
-          name: '1.1.1',
-          title: 'xxx',
-          items: [
-          	{
-          		title:"下级菜单",
-          		items:[
-          		{
-          name: '2.1.1',
-          title: '下级菜单1',
-          items: []
-        },
-         {
-          name: '3.1.1',
-          title: '下级菜单2',
-          items: []
-        }]
-          }
-          ]
-        }
-      ]
-    }, {
-      title: '1.2',
-      items:[
-      	 {
-          name: '2.1.1',
-          title: 'xxx',
-          items: []
-        },
-         {
-          name: '3.1.1',
-          title: 'xxx',
-          items: []
-        }
-      ]
-    }
-    ]
-  }];
+    
 	ngOnInit(): void {
 	    this.getAgents();
 	}
-	
+  datas={link_title:"本周新增会员数量",x_data:[21231,1212,21231,3213,2222,6666,7777],
+  y_data:[212,121,212,321,333,555,888};
+	bar(event:any){
+    console.log(event);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import {EchartsModule} from './echarts.module';
 @Component({
   selector: 'app-echarts',
@@ -16,7 +16,11 @@ export class EchartsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
+
+  
+
   chartOption = {
     title: {
       text: '堆叠区域图'

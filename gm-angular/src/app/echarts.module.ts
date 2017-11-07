@@ -6,6 +6,7 @@ import { AngularEchartsModule } from 'ngx-echarts';
   imports: [
     AngularEchartsModule
   ],
+  exports:[EchartsComponent],
   declarations: [EchartsComponent],
 })
 export class EchartsModule { }
