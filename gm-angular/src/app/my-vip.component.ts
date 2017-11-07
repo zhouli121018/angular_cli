@@ -18,12 +18,15 @@ export class MyVipComponent implements OnInit{
 	pageIndex = 1;
 	pageCount = 1;
 	totalNum = 0;
-	bindpage(event:number):void {
+	private bindpage(event:number):void {
 		var vipsInfo = this.agentService.getVips();
 		this.vips = vipsInfo.slice((event-1)*10,event*10);
 		this.pageIndex = event;
 		this.totalNum = vipsInfo.length;
-		this.pageCount = Math.floor(vipsInfo.length/10)+1;
-    
+        if(vipsInfo.length%10==0){
+     	 this.pageCount = Math.floor(vipsInfo.length/10);
+	    }else{
+	      this.pageCount = Math.floor(vipsInfo.length/10)+1;
+	    }
     }
 }

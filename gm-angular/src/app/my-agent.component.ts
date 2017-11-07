@@ -18,11 +18,93 @@ export class MyAgentComponent implements OnInit{
     };
     
 	ngOnInit(): void {
-	    this.getAgents();
+	    this.bindpage(1);
 	}
+  pageIndex = 1;
+  pageCount = 1;
+  totalNum = 0;
+  private bindpage(event:number):void {
+    var agentsInfo = this.agentService.getAgents();
+    this.agents = agentsInfo.slice((event-1)*10,event*10);
+    this.pageIndex = event;
+    this.totalNum = agentsInfo.length;
+    if(agentsInfo.length%10==0){
+      this.pageCount = Math.floor(agentsInfo.length/10);
+    }else{
+      this.pageCount = Math.floor(agentsInfo.length/10)+1;
+    }
+  }
   datas={link_title:"本周新增会员数量",x_data:[21231,1212,21231,3213,2222,6666,7777],
   y_data:[212,121,212,321,333,555,888};
 	bar(event:any){
     console.log(event);
+  }
+
+  linkoption = {
+    title: {
+      text: this.datas.link_title
+    },
+    color: ['#3398DB'],
+    //气泡提示框，常用于展现更详细的数据
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { // 坐标轴指示器，坐标轴触发有效
+        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+      }
+    },
+    toolbox: {
+      show: true,
+      feature: {
+        //显示缩放按钮
+        dataZoom: {
+          show: true
+        },
+        //显示折线和块状图之间的切换
+        magicType: {
+          show: true,
+          type: ['bar', 'line']
+        },
+        //显示是否还原
+        restore: {
+          show: true
+        },
+        //是否显示图片
+        saveAsImage: {
+          show: true
+        }
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: [{
+      type: 'category',
+      data: this.datas.x_data,
+      axisTick: {
+        alignWithLabel: true
+      },
+      axisLabel: {
+        interval: 0,
+        rotate: 20
+      },
+    }],
+    yAxis: [{
+      name: "会员数量",
+      type: 'value'
+    }],
+    series: [{
+      name: '新增会员数量',
+      type: 'bar',
+      barWidth: '60%',
+      label: {
+        normal: {
+          show: true
+        }
+      },
+      data:this.datas.y_data
+    }]
   }
 }

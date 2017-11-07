@@ -1,12 +1,13 @@
 .content{
   display:flex;
-  height:800px;
+  height:100%;
 }
 .content>div{
   flex-grow: 1;
   /*background:#088;*/
   padding-left:2px;
   border:1px solid #ddd;
+  border-bottom: none;
 }
 .content #nav{
    margin-left:1em;
@@ -14,6 +15,7 @@
 #nav{
    background-color:#324157;
    min-width:12%;
+   padding-top:2em;
 }
 /*#nav .navtree> ul>li{
   line-height: 2;

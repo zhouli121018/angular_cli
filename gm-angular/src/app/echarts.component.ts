@@ -15,11 +15,11 @@ export class EchartsComponent implements OnInit {
     }, 3000);
   }
 
-  ngOnInit() {
-
-  }
-
   
+@Input() info;
+  ngOnInit() {
+    
+  }
 
   chartOption = {
     title: {
@@ -154,6 +154,9 @@ export class EchartsComponent implements OnInit {
   link_title="本周新增会员数量";
   x_data=[21231,1212,21231,3213,2222,6666,7777];
   y_data=[212,121,212,321,333,555,666];
+  // link_title=info.link_title;
+  // x_data=info.x_data;
+  // y_data=info.y_data;
   linkoption = {
     title: {
       text: this.link_title
