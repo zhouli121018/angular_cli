@@ -5,6 +5,8 @@ import {AGENTS} from './mock-agent';
 import {VIPS} from './mock-vip';
 import {Detail} from './detail';
 import {DETAILS} from './mock-detail';
+import {Paylog} from './paylog';
+import {PAYLOGS} from './mock-paylog';
 
 @Injectable()
 export class AgentService {
@@ -16,5 +18,8 @@ export class AgentService {
 	}
 	getDetails():Detail[]{
 		return DETAILS;
+	}
+	getPaylogs():Paylog[]{
+		return PAYLOGS;
 	}
 }

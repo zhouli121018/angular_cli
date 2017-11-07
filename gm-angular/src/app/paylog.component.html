@@ -1,0 +1,50 @@
+      <h2>
+      	<span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+      </h2>
+      <div>
+      <div class="searchInfo">
+      	    <form class="form-inline form-btn" name="search-form">
+      	    	<div class="form-group">
+      	    		<div class="input-group">
+      	    			<span class="input-group-addon">开始时间</span>
+      	    			<input type="date" name="start-time" class="form-control" placeholder="开始时间">
+      	    		</div>
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<div class="input-group">
+      	    			<span class="input-group-addon">截止时间</span>
+      	    			<input type="date" name="end-time" class="form-control" placeholder="截止时间">
+      	    		</div>
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<input type="number" name="invitecode" class="form-control" placeholder="请输入代理邀请码">
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<input type="button" class="btn btn-success" value="查询代理提现">
+      	    	</div>
+      	    </form>
+		</div>
+		<h4>提现总金额：元</h4>
+      	<table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>提现账号</th>
+				<th>姓名</th>
+                        <th>提现金额</th>
+				<th>是否处理</th>
+				<th>提现时间</th>
+			</tr>
+			<tbody *ngIf="paylogs">
+				<tr *ngFor="let paylog of paylogs">
+					<td>{{paylog.invitecode}}</td>
+					<td>{{paylog.name}}</td>
+                              <td>{{paylog.money}}</td>
+					<td>{{paylog.status}}</td>
+					<td>{{paylog.createtime}}</td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+      <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+      <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+      

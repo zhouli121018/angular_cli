@@ -14,6 +14,7 @@ import {NavComponent} from './nav.component';
 import {Agent} from './agent';
 import {EchartsComponent} from './echarts.component';
 import {DetailsComponent} from './details.component';
+import {PaylogComponent} from './paylog.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {EchartsModule} from './echarts.module';
@@ -26,7 +27,8 @@ import {EchartsModule} from './echarts.module';
     PagingComponent,
     TreeComponent,
     NavComponent,
-    DetailsComponent
+    DetailsComponent,
+    PaylogComponent
   ],
   imports: [
     BrowserModule,
