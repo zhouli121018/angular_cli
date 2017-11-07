@@ -13,6 +13,7 @@ import {TreeComponent} from './tree.component';
 import {NavComponent} from './nav.component';
 import {Agent} from './agent';
 import {EchartsComponent} from './echarts.component';
+import {DetailsComponent} from './details.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {EchartsModule} from './echarts.module';
@@ -24,7 +25,8 @@ import {EchartsModule} from './echarts.module';
     MyVipComponent,
     PagingComponent,
     TreeComponent,
-    NavComponent
+    NavComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

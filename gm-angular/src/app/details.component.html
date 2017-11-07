@@ -18,45 +18,49 @@
       	    		</div>
       	    	</div>
       	    	<div class="form-group">
-      	    		<input type="text" name="nickname" class="form-control" placeholder="请输入玩家昵称">
+      	    		<input type="number" name="invitecode" class="form-control" placeholder="请输入代理邀请码">
       	    	</div>
       	    	<div class="form-group">
       	    		<input type="number" name="uuid" class="form-control" placeholder="请输入用户ID">
       	    	</div>
+	      	    	<select name="gameId" class="form-control">
+	      	    		<option value="0">全部充值</option>
+	      	    		<option value="1">挖乐28充值</option>
+	      	    		<option value="2">牛牛充值</option>
+	      	    		<option value="3">麻将充值</option>
+	      	    	</select>
+      	       
       	    	<div class="form-group">
       	    		<input type="button" class="btn btn-success" value="查询">
       	    	</div>
       	    </form>
 		</div>
+		<h4>充值总金额：</h4>
       	<table class="table table-bordered table-responsive table-striped">
 			<tr>
-				<th>用户ID</th>
+				<th>充值ID</th>
 				<th>用户昵称</th>
-                        <th>剩余蓝钻</th>
-				<th>剩余红钻</th>
-				<th>状态</th>
-				<th>注册时间</th>
-                        <th>绑定的邀请码</th>
-                        <th>编辑</th>
+                        <th>充值金额</th>
+				<th>购钻数量</th>
+				<th>充值时间</th>
+				<th>充值结果</th>
+                        <th>代理邀请码</th>
+                        <th>代理级别</th>
 			</tr>
-			<tbody *ngIf="vips">
-				<tr *ngFor="let vip of vips">
-					<td>{{vip.uuid}}</td>
-					<td>{{vip.nickname}}</td>
-                              <td>{{vip.roomcard}}</td>
-					<td>{{vip.redcard}}</td>
-					<td>{{vip.status}}</td>
-                              <td>{{vip.createtime}}</td>
-                              <td>{{vip.invitecode}}</td>
-					<td>
-                                    <input type="button" class="btn btn-success" value="充值" />
-                              </td>
+			<tbody *ngIf="details">
+				<tr *ngFor="let detail of details">
+					<td>{{detail.uuid}}</td>
+					<td>{{detail.nickname}}</td>
+                              <td>{{detail.money}}</td>
+					<td>{{detail.count}}</td>
+					<td>{{detail.createtime}}</td>
+                              <td>{{detail.result}}</td>
+                              <td>{{detail.invitecode}}</td>
+					<td>{{detail.powerid}} </td>
 				</tr>
 			</tbody>
 		</table>
       </div>
       <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
       <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
-      <app-echarts ></app-echarts>
-
       

@@ -59,6 +59,7 @@ export class AppComponent {
           ]
     },
     {link:'/my-agent',des:'我的代理',hasChild:[]},
+    {link:'/details',des:'账单明细',hasChild:[]},
     {link:'/my-vip',des:'我的会员',hasChild:[
           {link:'/my-vip',des:'我的会员',hasChild:[]},
           {link:'/my-agent',des:'我的代理',hasChild:[]},
