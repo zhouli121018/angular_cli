@@ -44,51 +44,6 @@ import {Link} from './link'
 export class AppComponent {
  
   selectedUrl:Link;
- menu = [{
-    title: '1',
-    _open:true, //默认打开第一级
-    items: [{
-      title: '1.1',
-      items: [
-        {
-          name: '1.1.1',
-          title: 'xxx',
-          items: [
-            {
-              title:"下级菜单",
-              items:[
-              {
-          name: '2.1.1',
-          title: '下级菜单1',
-          items: []
-        },
-         {
-          name: '3.1.1',
-          title: '下级菜单2',
-          items: []
-        }]
-          }
-          ]
-        }
-      ]
-    }, {
-      title: '1.2',
-      items:[
-         {
-          name: '2.1.1',
-          title: 'xxx',
-          items: []
-        },
-         {
-          name: '3.1.1',
-          title: 'xxx',
-          items: []
-        }
-      ]
-    }
-    ]
-  }];
-
   links=[
     {
       link:'/agent-info',
@@ -114,6 +69,7 @@ export class AppComponent {
           ]}
          
     ]},
+    {link:'/my-echarts',des:'图表统计',hasChild:[]},
     {link:'/my-agent',des:'我的代理',hasChild:[]},
     {link:'/my-agent',des:'投注信息',hasChild:[{link:'/my-vip',des:'投注详情',hasChild:[]}]}
   ]

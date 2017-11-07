@@ -12,8 +12,10 @@ import {PagingComponent} from './paging.component';
 import {TreeComponent} from './tree.component';
 import {NavComponent} from './nav.component';
 import {Agent} from './agent';
+import {EchartsComponent} from './echarts.component';
 
 import {AppRoutingModule} from './app-routing.module';
+import {EchartsModule} from './echarts.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import {AppRoutingModule} from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EchartsModule
   ],
   providers:[AgentService],
   bootstrap: [AppComponent]
