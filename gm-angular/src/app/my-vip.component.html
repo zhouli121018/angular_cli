@@ -57,6 +57,6 @@
       </div>
       <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
       <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
-      <app-echarts ></app-echarts>
+      <app-echarts [linkoption]="vipdata"></app-echarts>
 
       

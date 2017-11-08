@@ -34,13 +34,17 @@ export class MyAgentComponent implements OnInit{
       this.pageCount = Math.floor(agentsInfo.length/10)+1;
     }
   }
-  datas={link_title:"本周新增会员数量",x_data:[21231,1212,21231,3213,2222,6666,7777],
-  y_data:[212,121,212,321,333,555,888]};
+  datas={
+    link_title:"本周新增代理数量",
+    x_data:[21231,1212,21231,3213,2222,6666,7777],
+    y_data:[212,666,555,456,333,555,888],
+    y_name:"代理数量",
+    s_name:'新增代理数量'};
 	bar(event:any){
     console.log(event);
   }
 
-  linkoption = {
+  agentdata = {
     title: {
       text: this.datas.link_title
     },
@@ -92,11 +96,11 @@ export class MyAgentComponent implements OnInit{
       },
     }],
     yAxis: [{
-      name: "会员数量",
+      name: this.datas.y_name,
       type: 'value'
     }],
     series: [{
-      name: '新增会员数量',
+      name: this.datas.s_name,
       type: 'bar',
       barWidth: '60%',
       label: {

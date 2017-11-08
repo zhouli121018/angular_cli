@@ -29,4 +29,84 @@ export class MyVipComponent implements OnInit{
 	      this.pageCount = Math.floor(vipsInfo.length/10)+1;
 	    }
     }
+
+    datas={
+    	link_title:"本周新增会员数量",
+    	x_data:[21231,1212,21231,3213,2222,6666,74],
+ 		y_data:[212,425,265,586,333,999,888],
+ 		y_name:"会员数量",
+ 		s_name:'新增会员数量'
+ 	};
+	bar(event:any){
+    console.log(event);
+  }
+
+  vipdata = {
+    title: {
+      text: this.datas.link_title
+    },
+    color: ['#3398DB'],
+    //气泡提示框，常用于展现更详细的数据
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { // 坐标轴指示器，坐标轴触发有效
+        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+      }
+    },
+    toolbox: {
+      show: true,
+      feature: {
+        //显示缩放按钮
+        dataZoom: {
+          show: true
+        },
+        //显示折线和块状图之间的切换
+        magicType: {
+          show: true,
+          type: ['bar', 'line']
+        },
+        //显示是否还原
+        restore: {
+          show: true
+        },
+        //是否显示图片
+        saveAsImage: {
+          show: true
+        }
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: [{
+      type: 'category',
+      data: this.datas.x_data,
+      axisTick: {
+        alignWithLabel: true
+      },
+      axisLabel: {
+        interval: 0,
+        rotate: 20
+      },
+    }],
+    yAxis: [{
+      name: this.datas.y_name,
+      type: 'value'
+    }],
+    series: [{
+      name: this.datas.s_name,
+      type: 'bar',
+      barWidth: '60%',
+      label: {
+        normal: {
+          show: true
+        }
+      },
+      data:this.datas.y_data
+    }]
+  }
+
 }
