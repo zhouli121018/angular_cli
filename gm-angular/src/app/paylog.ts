@@ -1,5 +1,5 @@
-export class Plalog{
-	invitecode:string;
+export class Paylog{
+	invitecode:number;
 	name:string;
 	money:number;
 	status:number;

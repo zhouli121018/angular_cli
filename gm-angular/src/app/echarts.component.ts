@@ -16,7 +16,7 @@ export class EchartsComponent implements OnInit {
   }
 
   
-@Input() info;
+
   ngOnInit() {
     
   }

@@ -35,7 +35,7 @@ export class MyAgentComponent implements OnInit{
     }
   }
   datas={link_title:"本周新增会员数量",x_data:[21231,1212,21231,3213,2222,6666,7777],
-  y_data:[212,121,212,321,333,555,888};
+  y_data:[212,121,212,321,333,555,888]};
 	bar(event:any){
     console.log(event);
   }

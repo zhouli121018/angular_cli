@@ -1,7 +1,11 @@
 import {Component,OnInit} from '@angular/core';
-import {Detail} from './detail';
+import {Betlog} from './betlog';
 
 @Component({
 	selector:'betlog',
-	templateUrl:'./details.component.html'
-	})
+	templateUrl:'./betlog.component.html'
+})
+
+export class BetlogComponent{
+	title="投注统计"
+} 
