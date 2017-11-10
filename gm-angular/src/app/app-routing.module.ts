@@ -8,6 +8,7 @@ import {EchartsComponent} from './echarts.component';
 import {DetailsComponent} from './details.component';
 import {PaylogComponent} from './paylog.component';
 import {StatsComponent} from './stats.component';
+import {TouzhuDetailComponent} from './touzhu-detail.component';
 
 const routes :Routes = [
 	{path:'agent-info',component:AgentInfoComponent},
@@ -17,6 +18,7 @@ const routes :Routes = [
     {path:'details',component:DetailsComponent},
     {path:'paylog',component:PaylogComponent},
     {path:'stats',component:StatsComponent},
+    {path:'touzhu-detail',component:TouzhuDetailComponent},
     {path:'',redirectTo:'/agent-info',pathMatch:'full'}
 ]
 

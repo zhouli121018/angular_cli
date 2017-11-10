@@ -62,6 +62,7 @@ export class AppComponent {
     {link:'/details',des:'账单明细',hasChild:[]},
      {link:'/paylog',des:'提现流水',hasChild:[]},
      {link:'/stats',des:'投注统计',hasChild:[]},
+     {link:'/touzhu-detail',des:'投注明细',hasChild:[]},
     {link:'/my-vip',des:'我的会员',hasChild:[
           {link:'/my-vip',des:'我的会员',hasChild:[]},
           {link:'/my-agent',des:'我的代理',hasChild:[]},

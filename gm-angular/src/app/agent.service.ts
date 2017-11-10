@@ -14,13 +14,18 @@ import 'rxjs/add/operator/toPromise';
 export class AgentService {
 	private heroesUrl = 'api/heroes';
 	private statsUrl = 'api/stats';
+	private touzhudetailsUrl = 'api/touzhuDetails';
 	constructor(private http: Http) { }
 	getHeroes(){
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data);
     }
-    
+    getTouzhuDetails(){
+    	return this.http.get(this.touzhudetailsUrl)
+               .toPromise()
+               .then(response => response.json().data);
+    }
     getStats(){
     	return this.http.get(this.statsUrl)
                .toPromise()
