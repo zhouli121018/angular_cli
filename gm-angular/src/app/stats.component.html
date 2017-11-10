@@ -22,6 +22,7 @@
               </div>
             </form>
     </div>
+    <h4>投注金额汇总(￥)：{{0}} 元</h4>
 		<table class="table table-bordered table-responsive table-striped">
 			<tr>
 				<th>姓名</th>
@@ -49,3 +50,4 @@
 	</div>
   <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
   <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+  <app-echarts [linkoption]="statsdata"></app-echarts>
