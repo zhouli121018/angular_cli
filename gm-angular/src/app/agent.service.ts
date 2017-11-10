@@ -13,13 +13,19 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AgentService {
 	private heroesUrl = 'api/heroes';
+	private statsUrl = 'api/stats';
 	constructor(private http: Http) { }
 	getHeroes(){
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data);
     }
-
+    
+    getStats(){
+    	return this.http.get(this.statsUrl)
+               .toPromise()
+               .then(response => response.json().data);
+    }
 	getAgents(): Agent[]  {
 		return AGENTS;
 	}

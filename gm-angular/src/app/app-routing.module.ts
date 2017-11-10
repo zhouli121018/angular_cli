@@ -7,6 +7,7 @@ import {MyVipComponent} from './my-vip.component';
 import {EchartsComponent} from './echarts.component';
 import {DetailsComponent} from './details.component';
 import {PaylogComponent} from './paylog.component';
+import {StatsComponent} from './stats.component';
 
 const routes :Routes = [
 	{path:'agent-info',component:AgentInfoComponent},
@@ -15,6 +16,7 @@ const routes :Routes = [
     {path:'my-echarts',component:EchartsComponent},
     {path:'details',component:DetailsComponent},
     {path:'paylog',component:PaylogComponent},
+    {path:'stats',component:StatsComponent},
     {path:'',redirectTo:'/agent-info',pathMatch:'full'}
 ]
 
