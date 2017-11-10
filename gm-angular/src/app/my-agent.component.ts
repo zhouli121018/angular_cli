@@ -3,7 +3,6 @@ import { OnInit } from '@angular/core';
 import {Agent} from './agent';
 import {AgentService} from './agent.service';
 
-
 @Component({
 	selector:'my-agent',
 	styleUrls:['./my-agent.component.css'],
@@ -19,6 +18,7 @@ export class MyAgentComponent implements OnInit{
     
 	ngOnInit(): void {
 	    this.bindpage(1);
+      this.agentService.getHeroes().then(data=>console.log(data));
 	}
   pageIndex = 1;
   pageCount = 1;
@@ -111,4 +111,6 @@ export class MyAgentComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
+  
+
 }

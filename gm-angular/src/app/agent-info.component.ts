@@ -99,5 +99,6 @@ import {Component} from '@angular/core';
 })
 
 export class AgentInfoComponent {
-	title = "代理信息"
+	title = "代理信息";
+	
 }

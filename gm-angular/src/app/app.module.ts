@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 import {AgentService} from './agent.service';
 
@@ -33,7 +38,11 @@ import {EchartsModule} from './echarts.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EchartsModule
+    EchartsModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers:[AgentService],
   bootstrap: [AppComponent]

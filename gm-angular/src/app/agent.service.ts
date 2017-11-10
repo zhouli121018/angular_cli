@@ -7,9 +7,19 @@ import {Detail} from './detail';
 import {DETAILS} from './mock-detail';
 import {Paylog} from './paylog';
 import {PAYLOGS} from './mock-paylog';
+import {Headers,Http} from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AgentService {
+	private heroesUrl = 'api/heroes';
+	constructor(private http: Http) { }
+	getHeroes(){
+    return this.http.get(this.heroesUrl)
+               .toPromise()
+               .then(response => response.json().data);
+    }
+
 	getAgents(): Agent[]  {
 		return AGENTS;
 	}
@@ -22,4 +32,5 @@ export class AgentService {
 	getPaylogs():Paylog[]{
 		return PAYLOGS;
 	}
+
 }
