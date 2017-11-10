@@ -1,7 +1,6 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {AgentService} from './agent.service';
 import {Vip} from './vip';
-import { OnInit } from '@angular/core';
 @Component({
 	selector:'my-vip',
 	styles:[],

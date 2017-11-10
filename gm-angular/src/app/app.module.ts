@@ -22,6 +22,7 @@ import {DetailsComponent} from './details.component';
 import {PaylogComponent} from './paylog.component';
 import {StatsComponent} from './stats.component';
 import {TouzhuDetailComponent} from './touzhu-detail.component';
+import {ExchangeComponent} from './exchange.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {EchartsModule} from './echarts.module';
@@ -37,7 +38,8 @@ import {EchartsModule} from './echarts.module';
     DetailsComponent,
     PaylogComponent,
     StatsComponent,
-    TouzhuDetailComponent
+    TouzhuDetailComponent,
+    ExchangeComponent
   ],
   imports: [
     BrowserModule,

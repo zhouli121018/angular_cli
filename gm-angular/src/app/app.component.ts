@@ -59,10 +59,6 @@ export class AppComponent {
           ]
     },
     {link:'/my-agent',des:'我的代理',hasChild:[]},
-    {link:'/details',des:'账单明细',hasChild:[]},
-     {link:'/paylog',des:'提现流水',hasChild:[]},
-     {link:'/stats',des:'投注统计',hasChild:[]},
-     {link:'/touzhu-detail',des:'投注明细',hasChild:[]},
     {link:'/my-vip',des:'我的会员',hasChild:[
           {link:'/my-vip',des:'我的会员',hasChild:[]},
           {link:'/my-agent',des:'我的代理',hasChild:[]},
@@ -72,10 +68,13 @@ export class AppComponent {
               {link:'/agent-info',des:'agent-info',hasChild:[]}
           ]}
          
-    ]},
-    {link:'/my-echarts',des:'图表统计',hasChild:[]},
-    {link:'/my-agent',des:'我的代理',hasChild:[]},
-    {link:'/my-agent',des:'投注信息',hasChild:[{link:'/my-vip',des:'投注详情',hasChild:[]}]}
+    ]}
+    {link:'/details',des:'账单明细',hasChild:[]},
+     {link:'/paylog',des:'提现流水',hasChild:[]},
+     {link:'/stats',des:'投注统计',hasChild:[]},
+     {link:'/touzhu-detail',des:'投注明细',hasChild:[]},
+     {link:'/exchange',des:'兑换明细',hasChild:[]},
+    
   ]
   toggleShow(param):void{
     param.show=!param.show;

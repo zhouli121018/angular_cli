@@ -37,6 +37,33 @@ export class InMemoryDataService implements InMemoryDbService {
       {uuid:135818,nickname:'jaly',serialnum:1879358,betmount:550,createtime:'2017-01-11',bettype:1,betresult:1,lotresult:'1,3,5',facevalue:100,cardcount:2,invitecode:1001,powerid:5,invitecode1:23442,powerid1:1},
       {uuid:135818,nickname:'jaly',serialnum:1879358,betmount:550,createtime:'2017-01-12',bettype:1,betresult:1,lotresult:'1,3,5',facevalue:100,cardcount:2,invitecode:1001,powerid:5,invitecode1:23442,powerid1:1},
      ]
-    return {results,heroes,stats,touzhuDetails};
+     const exchanges = [
+     {uuid:135818,nickname:'jaly',money:101,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:102,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:103,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:104,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:105,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:106,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:107,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:108,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:109,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:110,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:111,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:112,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:113,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:114,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:115,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:116,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:117,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:118,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:119,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:120,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:121,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:122,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:123,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:124,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     {uuid:135818,nickname:'jaly',money:125,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     ]
+    return {results,heroes,stats,touzhuDetails,exchanges};
   }
 }
