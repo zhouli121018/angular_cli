@@ -68,7 +68,7 @@ export class AppComponent {
               {link:'/agent-info',des:'agent-info',hasChild:[]}
           ]}
          
-    ]}
+    ]},
     {link:'/details',des:'账单明细',hasChild:[]},
      {link:'/paylog',des:'提现流水',hasChild:[]},
      {link:'/stats',des:'投注统计',hasChild:[]},
