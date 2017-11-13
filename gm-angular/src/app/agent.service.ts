@@ -16,6 +16,7 @@ export class AgentService {
 	private statsUrl = 'api/stats';
 	private touzhudetailsUrl = 'api/touzhuDetails';
 	private exchangeUrl = 'api/exchanges';
+  private noticeUrl='api/notices';
 	constructor(private http: Http) { }
 	getHeroes(){
     return this.http.get(this.heroesUrl)
@@ -34,6 +35,11 @@ export class AgentService {
     }
     getStats(){
     	return this.http.get(this.statsUrl)
+               .toPromise()
+               .then(response => response.json().data);
+    }
+    getNotices(){
+      return this.http.get(this.noticeUrl)
                .toPromise()
                .then(response => response.json().data);
     }

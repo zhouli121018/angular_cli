@@ -10,6 +10,7 @@ import {PaylogComponent} from './paylog.component';
 import {StatsComponent} from './stats.component';
 import {TouzhuDetailComponent} from './touzhu-detail.component';
 import {ExchangeComponent} from './exchange.component';
+import {NoticeComponent} from './notice.component';
 
 const routes :Routes = [
 	{path:'agent-info',component:AgentInfoComponent},
@@ -21,6 +22,7 @@ const routes :Routes = [
     {path:'stats',component:StatsComponent},
     {path:'touzhu-detail',component:TouzhuDetailComponent},
     {path:'exchange',component:ExchangeComponent},
+    {path:'notice',component:NoticeComponent},
     {path:'',redirectTo:'/agent-info',pathMatch:'full'}
 ]
 

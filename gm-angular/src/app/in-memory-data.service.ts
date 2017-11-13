@@ -63,7 +63,13 @@ export class InMemoryDataService implements InMemoryDbService {
      {uuid:135818,nickname:'jaly',money:123,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
      {uuid:135818,nickname:'jaly',money:124,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
      {uuid:135818,nickname:'jaly',money:125,createtime:'2017-11-11',randomnum:'mLsZs0SBx9z02kwYt56cptRGb7TdTo89',status:1},
+     ];
+
+     const notices=[
+      {id:1,content:"最正宗嘅清远本地麻将，2人、3人也可开局，再也不用担心三缺一了！有任何问题请联系官方客服：waleqipai3，获取更多活动资讯请关注公众号：waleqp28",managerid:25,noticetype:1},
+      {id:2,content:"挖乐28隆重上线！斗牛 28两不误！",managerid:39,noticetype:2},
+      {id:3,content:"牛大帅改版即便完成，改版后将包括三公，赢三张，麻将等多款产品，玩法丰富，体验流畅，敬请期待！",managerid:22,noticetype:3}
      ]
-    return {results,heroes,stats,touzhuDetails,exchanges};
+    return {results,heroes,stats,touzhuDetails,exchanges,notices};
   }
 }

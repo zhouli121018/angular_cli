@@ -74,6 +74,7 @@ export class AppComponent {
      {link:'/stats',des:'投注统计',hasChild:[]},
      {link:'/touzhu-detail',des:'投注明细',hasChild:[]},
      {link:'/exchange',des:'兑换明细',hasChild:[]},
+     {link:'/notice',des:'公告管理',hasChild:[]}
     
   ]
   toggleShow(param):void{
