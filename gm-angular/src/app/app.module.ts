@@ -24,6 +24,7 @@ import {StatsComponent} from './stats.component';
 import {TouzhuDetailComponent} from './touzhu-detail.component';
 import {ExchangeComponent} from './exchange.component';
 import {NoticeComponent} from './notice.component';
+import {LoginComponent} from './login.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {EchartsModule} from './echarts.module';
@@ -41,7 +42,8 @@ import {EchartsModule} from './echarts.module';
     StatsComponent,
     TouzhuDetailComponent,
     ExchangeComponent,
-    NoticeComponent
+    NoticeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

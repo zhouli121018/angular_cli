@@ -11,6 +11,7 @@ import {StatsComponent} from './stats.component';
 import {TouzhuDetailComponent} from './touzhu-detail.component';
 import {ExchangeComponent} from './exchange.component';
 import {NoticeComponent} from './notice.component';
+import {LoginComponent} from './login.component';
 
 const routes :Routes = [
 	{path:'agent-info',component:AgentInfoComponent},
@@ -23,7 +24,8 @@ const routes :Routes = [
     {path:'touzhu-detail',component:TouzhuDetailComponent},
     {path:'exchange',component:ExchangeComponent},
     {path:'notice',component:NoticeComponent},
-    {path:'',redirectTo:'/agent-info',pathMatch:'full'}
+    {path:'login',component:LoginComponent},
+    {path:'',redirectTo:'agent-info',pathMatch:'full'}
 ]
 
 @NgModule({

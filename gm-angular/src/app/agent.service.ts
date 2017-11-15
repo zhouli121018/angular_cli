@@ -43,6 +43,7 @@ export class AgentService {
                .toPromise()
                .then(response => response.json().data);
     }
+    
 	getAgents(): Agent[]  {
 		return AGENTS;
 	}

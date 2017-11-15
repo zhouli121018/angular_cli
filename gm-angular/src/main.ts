@@ -3,6 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import * as $ from 'jquery';
 
 if (environment.production) {
   enableProdMode();
@@ -10,3 +11,9 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+if(sessionStorage['loginUser']){
+	$('#login').hide().siblings().show();
+}else{
+	$('#login').show().siblings().hide();
+}
