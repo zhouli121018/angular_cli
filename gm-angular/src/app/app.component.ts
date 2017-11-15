@@ -10,7 +10,7 @@ import {Link} from './link'
           <p>欢迎 admin 的到来！</p>
         </div>
         <div>
-          <button type="button" class="btn btn-danger">退出</button>
+          <button (click)="logout()" type="button" class="btn btn-danger">退出</button>
           <button type="button" class="btn btn-warning">修改密码</button>
         </div>
       </div>
@@ -82,6 +82,11 @@ export class AppComponent {
   }
   onSelected(item):void{
     this.selectedUrl = item;
+  }
+
+  logout():void{
+    sessionStorage.clear();
+    location.href="";
   }
  
 }

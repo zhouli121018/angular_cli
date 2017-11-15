@@ -36,37 +36,51 @@ p.total{
 }
 
 #login{
-	position: relative;
+	/*position: relative;*/
+	display: flex;
 	width:100%;
 	height:100%;
 	color:#fff;
+	align-items: center;
+	justify-content: center;
+	background:url('assets/img/login-bg.jpg') no-repeat fixed 50%;
+    background-size: 100% 100%;
 }
 #login>img{
 	width:100%;
 	height:100%;
 }
 #login>div{
-	background:rgba(146,150,155,.5);
-	position: absolute;
-	width:50%;
-	top:30%;
-	left:25%;
+	background:rgba(146,150,155,.3);
+	/*position: absolute;*/
+	width:60%;
 	padding:4% 5% 5%;
-	border-radius: 5px;
+	margin:15%;
+	border-radius: 8px;
+	border:1px solid #AFAFAC;
 }
 #login>div>form{
 	width:80%;
 	margin:10px auto;
+}
+#login h4{
+	font-size:1.6em;
 }
 #login>div>form input.form-control{
 	background: transparent;
 	padding:6% 2%;
 	color:#fff;
 	font-size:1.2em;
-	border-color:#fff;
+	/*border-color:#fff;*/
+}
+#login>div>form input.for-control:hover,#login>div>form input.for-control:focus{
+	    border: 1px solid #58b7ff;
 }
 #login>div>form input.btn{
 	background: #8BBC68;
 	padding:4%;
 	font-size:1.2em;
+}
+app-root{
+	display:none;
 }
