@@ -2,6 +2,7 @@
 
 body{
 	/*padding:0.5em;*/
+	position:relative;
 }
 ul,li,h1,h2,h3,h4,h5,h6{
 	padding:0;
@@ -35,17 +36,18 @@ p.total{
 }
 
 #add,#edit,#charge-agent{
-	position: fixed;
+	position: absolute;
 	top:0;
 	left:0;
-	background:url('./assets/img/f4-bg.jpg') no-repeat fixed 50%;
+	background:url('./assets/img/f4-bg.jpg') no-repeat  50%;
     background-size: 100% 100%;
 	width:100%;
-	height: 100%;
+	height:100%;
 	z-index: 100;
 	padding-top:10%;
 
 }
+
 #add>div,#edit>div,#charge-agent>div{
 	background: #fff;
 	width:420px;
