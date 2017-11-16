@@ -1,0 +1,117 @@
+      <h2>
+      	<span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+      </h2>
+      <div>
+            <input type="button" class="btn btn-success" (click)="showCharge()" value="给玩家充值" />
+            <div class="searchInfo">
+      	    <form class="form-inline form-btn" name="search-form">
+      	    	<div class="form-group">
+      	    		<div class="input-group">
+      	    			<span class="input-group-addon">开始时间</span>
+      	    			<input type="date" name="start-time" class="form-control" placeholder="开始时间">
+      	    		</div>
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<div class="input-group">
+      	    			<span class="input-group-addon">截止时间</span>
+      	    			<input type="date" name="end-time" class="form-control" placeholder="截止时间">
+      	    		</div>
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<input type="text" name="nickname" class="form-control" placeholder="请输入玩家昵称">
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<input type="number" name="uuid" class="form-control" placeholder="请输入玩家ID">
+      	    	</div>
+      	    	<div class="form-group">
+      	    		<input type="button" class="btn btn-primary" value="查询">
+      	    	</div>
+      	    </form>
+	     </div>
+            <table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>用户ID</th>
+				<th>用户昵称</th>
+                        <th>剩余蓝钻</th>
+				<th>剩余红钻</th>
+				<th>状态</th>
+				<th>注册时间</th>
+                        <th>绑定的邀请码</th>
+                        <th>编辑</th>
+			</tr>
+			<tbody *ngIf="vips">
+				<tr *ngFor="let vip of vips">
+					<td>{{vip.uuid}}</td>
+					<td>{{vip.nickname}}</td>
+                              <td>{{vip.roomcard}}</td>
+					<td>{{vip.redcard}}</td>
+					<td>{{vip.status}}</td>
+                              <td>{{vip.createtime}}</td>
+                              <td>{{vip.invitecode}}</td>
+					<td>
+                                    <input type="button" (click)="showEdit(vip)" class="btn btn-warning" value="编辑玩家信息" />
+                              </td>
+				</tr>
+			</tbody>
+	      </table>
+      </div>
+
+      <div id="charge-agent" *ngIf="showChargeForm">
+            <div>
+                  <button type="button" (click)="hideCharge()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="text-center">代理充值</h3>
+                  <form>
+                    <div class="form-group">
+                      <label for="uuid">游戏ID：</label>
+                      <input type="number" [(ngModel)]="chargeInfo.uuid" name="uuid" id="uuid" class="form-control" placeholder="请输入游戏ID">
+                    </div>
+                    <div class="form-group">
+                      <label for="mount">游戏ID：</label>
+                      <input type="number" [(ngModel)]="chargeInfo.mount" name="mount" id="mount" class="form-control" placeholder="请输入充值钻石数量">
+                    </div>
+                    <div class="form-group">
+                      <input type="button" (click)="charge()" class="btn btn-block btn-success" name="login" value="充 值" >
+                    </div>
+                  </form>
+            </div>
+      </div>
+
+      <div id="edit" *ngIf="showEditForm">
+          <div>
+            <button type="button" (click)="hideEdit()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="text-center">修改玩家信息</h3>
+                <form>
+                    <div class="form-group">
+                      <label for="uuid">玩家ID：</label>
+                    <input type="number" [(ngModel)]="selectedAccount.uuid" name="uuid" id="uuid" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="nickname">用户昵称：</label>
+                      <input type="text" [(ngModel)]="selectedAccount.nickname" name="nickname" id="nickname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="roomcard">剩余蓝钻：</label>
+                      <input type="number" [(ngModel)]="selectedAccount.roomcard" name="roomcard" id="roomcard" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="redcard">剩余红钻：</label>
+                      <input type="number" [(ngModel)]="selectedAccount.redcard" name="redcard" id="redcard" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="invitecode">绑定的邀请码：</label>
+                      <input type="number" [(ngModel)]="selectedAccount.invitecode" name="invitecode" id="invitecode" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="button" (click)="edit()" class="btn btn-block btn-success"  value="确 定" >
+                    </div>
+                </form>
+          </div>
+      </div>
+
+      <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+      <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+      <app-echarts [linkoption]="vipdata"></app-echarts>
+
+      

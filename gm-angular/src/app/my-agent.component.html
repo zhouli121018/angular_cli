@@ -1,0 +1,209 @@
+  <h2>
+	    <span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+	</h2>
+  <input type="button" (click)="showAdd()" class="btn  btn-primary" value="新增代理">
+  <input type="button" (click)="showCharge()" class="btn btn-success" value="给代理充值">
+	<div class=''>
+    <div class="searchInfo">
+          <form class="form-inline form-btn" name="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">开始时间</span>
+                  <input type="date" name="start-time" class="form-control" placeholder="开始时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">截止时间</span>
+                  <input type="date" name="end-time" class="form-control" placeholder="截止时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="number" name="invitecode" class="form-control" placeholder="请输入代理邀请码">
+              </div>
+              <div class="form-group">
+                <input type="button" class="btn btn-success" value="查询">
+              </div>
+            </form>
+    </div>
+		<table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>代理姓名</th>
+        <th>代理编号</th>
+				<th>手机号</th>
+        <th>微信号</th>
+        <th>QQ号</th>
+        <th>邀请码</th>
+        <th>游戏用户ID</th>
+        <th>会员数</th>
+        <th>金额</th>
+        <th>代理状态</th>
+        <th>分成比例</th>
+        <th>是否开代理</th>
+        <th>代理级别</th>
+        <th>编辑</th>
+			</tr>
+			<tr *ngFor="let agent of agents">
+				<td>{{agent.id}}</td>
+				<td>{{agent.name}}</td>
+				<td>{{agent.weixin}}</td>
+        <td>{{agent.id}}</td>
+        <td>{{agent.name}}</td>
+        <td>{{agent.weixin}}</td>
+        <td>{{agent.id}}</td>
+        <td>{{agent.name}}</td>
+        <td>{{agent.weixin}}</td>
+        <td>{{agent.id}}</td>
+        <td>{{agent.name}}</td>
+        <td>{{agent.weixin}}</td>
+        <td>{{agent.weixin}}</td>
+        <td>
+          <input type="button" (click)="showEdit(agent)" class="btn btn-warning btn-sm"  value="修改">
+        </td>
+			</tr>
+		</table>
+	</div>
+  <div id="add-agent" *ngIf="showAddForm">
+    <div>
+      <button type="button" (click)="hideAdd()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      
+      <h3 class="text-center">新增代理信息</h3>
+    <form>
+      <div class="form-group">
+          <label for="aname">姓名：</label>
+          <input type="text" [(ngModel)]="addAgent.aname" name="aname" id="aname" autofocus class="form-control" placeholder="请输入代理姓名">
+        </div>
+        <div class="form-group">
+          <label for="uuid">玩家ID：</label>
+          <input type="number" [(ngModel)]="addAgent.uuid" name="uuid" id="uuid" class="form-control" placeholder="请输入玩家ID">
+        </div>
+        <div class="form-group">
+          <label for="invitecode">邀请码：</label>
+          <input type="number" [(ngModel)]="addAgent.invitecode" name="invitecode" id="invitecode" class="form-control" placeholder="请输入邀请码">
+        </div>
+        <div class="form-group">
+          <label for="tel">手机号：</label>
+          <input type="number" [(ngModel)]="addAgent.tel" name="tel" id="tel" class="form-control" placeholder="请输入手机号">
+        </div>
+        <div class="form-group">
+          <label for="weixin">微信号：</label>
+          <input type="text" [(ngModel)]="addAgent.weixin" name="weixin" id="weixin" class="form-control" placeholder="请输入微信号">
+        </div>
+        <div class="form-group">
+          <label for="qq">QQ号：</label>
+          <input type="number" [(ngModel)]="addAgent.qq" name="qq" class="form-control" placeholder="请输入QQ号">
+        </div>
+        <div class="form-group">
+          <label for="rebate">分成比例：</label>
+          <input type="text" [(ngModel)]="addAgent.rebate" name="rebate" id="rebate" class="form-control">
+        </div>
+        <div><b>是否开代理：</b></div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="addAgent.rootManager" name="rootManager" id="optionsRadios1" value="1">
+            是
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="addAgent.rootManager" name="rootManager" id="optionsRadios2" value="0">
+            否
+          </label>
+        </div>
+        <select class="form-control" name="powerId" [(ngModel)]="addAgent.powerId">
+          <option value="5">皇冠代理</option>
+          <option value="4">钻石代理</option>
+          <option value="3">铂金代理</option>
+          <option value="2">黄金代理</option>
+        </select>
+        <div class="form-group">
+          <input type="button" (click)="add()" class="btn btn-block btn-success" name="login" value="增加代理" >
+        </div>
+    </form>
+    </div>
+    
+  </div>
+
+  <div id="edit" *ngIf="showEditForm">
+    <div>
+      <button type="button" (click)="hideEdit()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="text-center">修改代理信息</h3>
+    <form>
+      <div class="form-group">
+          <label for="aname">姓名：</label>
+          <input type="text" [(ngModel)]="selectedAgent.aname" name="aname" id="aname" autofocus class="form-control" placeholder="请输入代理姓名">
+        </div>
+        <div class="form-group">
+          <label for="uuid">玩家ID：</label>
+          <input type="number" [(ngModel)]="selectedAgent.uuid" name="uuid" id="uuid" class="form-control" placeholder="请输入玩家ID">
+        </div>
+        <div class="form-group">
+          <label for="invitecode">邀请码：</label>
+          <input type="number" [(ngModel)]="selectedAgent.invitecode" name="invitecode" id="invitecode" class="form-control" placeholder="请输入邀请码">
+        </div>
+        <div class="form-group">
+          <label for="tel">手机号：</label>
+          <input type="number" [(ngModel)]="selectedAgent.tel" name="tel" id="tel" class="form-control" placeholder="请输入手机号">
+        </div>
+        <div class="form-group">
+          <label for="weixin">微信号：</label>
+          <input type="text" [(ngModel)]="selectedAgent.weixin" name="weixin" id="weixin" class="form-control" placeholder="请输入微信号">
+        </div>
+        <div class="form-group">
+          <label for="qq">QQ号：</label>
+          <input type="number" [(ngModel)]="selectedAgent.qq" name="qq" class="form-control" placeholder="请输入QQ号">
+        </div>
+        <div class="form-group">
+          <label for="rebate">分成比例：</label>
+          <input type="text" [(ngModel)]="selectedAgent.rebate" name="rebate" id="rebate" class="form-control">
+        </div>
+        <div><b>是否开代理：</b></div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="selectedAgent.rootManager" name="rootManager" id="optionsRadios1" value="1">
+            是
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]="selectedAgent.rootManager" name="rootManager" id="optionsRadios2" value="0">
+            否
+          </label>
+        </div>
+        <select class="form-control" name="powerId" [(ngModel)]="selectedAgent.powerId">
+          <option value="5">皇冠代理</option>
+          <option value="4">钻石代理</option>
+          <option value="3">铂金代理</option>
+          <option value="2">黄金代理</option>
+        </select>
+        <div class="form-group">
+          <input type="button" (click)="edit()" class="btn btn-block btn-success" name="login" value="增加代理" >
+        </div>
+    </form>
+    </div>
+  </div>
+
+  <div id="charge-agent" *ngIf="showChargeForm">
+    <div>
+      <button type="button" (click)="hideCharge()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="text-center">代理充值</h3>
+    <form>
+        <div class="form-group">
+          <label for="uuid">游戏ID：</label>
+          <input type="number" [(ngModel)]="chargeInfo.uuid" name="uuid" id="uuid" class="form-control" placeholder="请输入游戏ID">
+        </div>
+        <div class="form-group">
+          <label for="mount">游戏ID：</label>
+          <input type="number" [(ngModel)]="chargeInfo.mount" name="mount" id="mount" class="form-control" placeholder="请输入充值钻石数量">
+        </div>
+        <div class="form-group">
+          <input type="button" (click)="charge()" class="btn btn-block btn-success" name="login" value="充 值" >
+        </div>
+    </form>
+    </div>
+  </div>
+
+  <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+      <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+  <app-echarts [linkoption]="agentdata"></app-echarts>
