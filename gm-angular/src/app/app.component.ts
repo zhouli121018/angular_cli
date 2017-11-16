@@ -30,8 +30,9 @@ export class AppComponent implements OnInit{
     code:""
   };
   ngOnInit(): void {
-      if(sessionStorage['login']==1){
+      if(sessionStorage['login']){
         this.isLogin=true;
+        this.loginInfo.uname=sessionStorage['login'];
       }else{
         this.isLogin=false;
       }
@@ -82,7 +83,7 @@ export class AppComponent implements OnInit{
       return;
     }else{
       this.isLogin=true;
-      sessionStorage['login']=1;
+      sessionStorage['login']=this.loginInfo.uname;
     }
   }
 
