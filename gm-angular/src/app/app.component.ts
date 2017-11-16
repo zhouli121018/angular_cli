@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {Link} from './link'
+import {Link} from './link';
 @Component({
   selector: 'app-root',
   styleUrls: ['./app.component.css'],

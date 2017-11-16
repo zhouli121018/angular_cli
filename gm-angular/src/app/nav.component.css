@@ -16,7 +16,7 @@ ul>li li li a{
   padding:0 1em 0 4em;
   line-height: 2;
 }
-ul>li>a:hover,ul>li li a:hover,ul>li li li a:hover,ul>li li a.active,ul>li li li a.active{
+ul>li>a:hover,ul>li li a:hover,ul>li li li a:hover,ul>li.active a,ul>li li.active a,ul>li li li.active a{
   background: #20A0FF;
   color:#fff;
 }

@@ -22,15 +22,16 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
+    "@types/jquery": "^3.2.16",
+    "angular-in-memory-web-api": "^0.3.2",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
     "echarts": "^3.7.2",
+    "jquery": "^3.2.1",
     "ngx-bootstrap": "^1.9.3",
     "ngx-echarts": "^1.2.4",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14",
-    "angular-in-memory-web-api": "^0.3.2"
-
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.5.0",
