@@ -154,7 +154,6 @@ export class MyAgentComponent implements OnInit{
   edit():void{
     console.dir(this.selectedAgent);
     this.showEditForm=false;
-    this.selectedAgent={};
   }
   hideAdd():void{
     this.showAddForm=false;
