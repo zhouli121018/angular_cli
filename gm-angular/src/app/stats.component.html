@@ -1,0 +1,53 @@
+  <h2>
+	    <span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+	</h2>
+	<div class=''>
+    <div class="searchInfo">
+          <form class="form-inline form-btn" name="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">开始时间</span>
+                  <input type="date" name="start-time" class="form-control" placeholder="开始时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">截止时间</span>
+                  <input type="date" name="end-time" class="form-control" placeholder="截止时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="button" class="btn btn-success" value="查询">
+              </div>
+            </form>
+    </div>
+    <h4>投注金额汇总(￥)：{{0}} 元</h4>
+		<table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>姓名</th>
+        <th>代理编号</th>
+				<th>手机号</th>
+        <th>微信号</th>
+        <th>邀请码</th>
+        <th>游戏用户ID</th>
+        <th>会员数</th>
+        <th>投注金额(元)</th>
+        <th>代理级别</th>
+			</tr>
+			<tr *ngFor="let stat of stats">
+				<td>{{stat.name}}</td>
+				<td>{{stat.id}}</td>
+				<td>{{stat.tel}}</td>
+        <td>{{stat.weixin}}</td>
+        <td>{{stat.invitecode}}</td>
+        <td>{{stat.uuid}}</td>
+        <td>{{stat.accountnumber}}</td>
+        <td>{{stat.money}}</td>
+        <td>{{stat.powerid}}</td>
+			</tr>
+		</table>
+	</div>
+  <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+  <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+  <app-echarts [linkoption]="statsdata"></app-echarts>

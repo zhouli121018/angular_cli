@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let item of treelists">
+    <a [routerLink]="item.link"  [class.active]="item ===selectedItem" (click)="this.itemClick(item)">{{item.des}} <span *ngIf="item.hasChild.length" class="caret"></span></a>
+    <!--调用组件本身并 传值给下级: [treelists]="item.items"-->
+    <app-nav *ngIf="item._open && item.hasChild && item.hasChild.length" [treelists]="item.hasChild"></app-nav>
+  </li>
+</ul>

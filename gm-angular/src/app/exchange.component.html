@@ -1,0 +1,49 @@
+  <h2>
+	    <span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+	</h2>
+	<div class=''>
+    <div class="searchInfo">
+          <form class="form-inline form-btn" name="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">开始时间</span>
+                  <input type="date" name="start-time" class="form-control" placeholder="开始时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">截止时间</span>
+                  <input type="date" name="end-time" class="form-control" placeholder="截止时间">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="number" name="uuid" class="form-control" placeholder="请输入玩家ID">
+              </div>
+              <div class="form-group">
+                <input type="button" class="btn btn-success" value="查询">
+              </div>
+            </form>
+    </div>
+		<table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>玩家ID</th>
+        <th>玩家昵称</th>
+				<th>兑换金额</th>
+        <th>兑换时间</th>
+        <th>兑换序列号</th>
+        <th>兑换状态</th>
+			</tr>
+			<tr *ngFor="let exchange of exchanges">
+				<td>{{exchange.uuid}}</td>
+				<td>{{exchange.nickname}}</td>
+				<td>{{exchange.money}}</td>
+        <td>{{exchange.createtime}}</td>
+        <td>{{exchange.randomnum}}</td>
+        <td>{{exchange.status}}</td>
+			</tr>
+		</table>
+	</div>
+  <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+  <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+  

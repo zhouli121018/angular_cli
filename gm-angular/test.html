@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var type="11,";
+	var facevalue="20";
+	var cardcount=3;
+	var typearr = type.split(","); 
+	if(typearr.length>1){
+    	        	var len = typearr.length;
+    	        	var f=facevalue;
+    	        	var c=cardcount;
+    	        	for(var i=0;i<len-1;i++){
+    	        		facevalue += ","+f;
+    	        		cardcount += ","+c;
+    	        	}
+     }
+     console.log(type,facevalue,cardcount);
+</script>
+</body>
+</html>

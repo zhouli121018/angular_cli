@@ -1,0 +1,29 @@
+
+ul>li>a{
+  font-size: 1.2em;
+  padding:4px 8px;
+  background:#324157;
+}
+ul>li li a{
+  font-size: 1.1em;
+  background: #1F2D3D;
+  padding:0 1em 0 2em;
+  line-height: 2;
+}
+ul>li li li a{
+  font-size: 1em;
+  background: #1F2D3D;
+  padding:0 1em 0 4em;
+  line-height: 2;
+}
+ul>li>a:hover,ul>li li a:hover,ul>li li li a:hover,ul>li li a.active,ul>li li li a.active{
+  background: #20A0FF;
+  color:#fff;
+}
+a{
+  color:#BFCBD9;
+  display:inline-block;
+  width:100%;
+  box-sizing: border-box;
+  line-height:2;
+}

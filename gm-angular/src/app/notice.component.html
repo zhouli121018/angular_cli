@@ -1,0 +1,28 @@
+      <h2>
+      	<span>{{title}}</span>
+		<img src="./assets/img/logo.png"/>
+      </h2>
+      <button type="button" class="btn btn-success add-notice"><span class="glyphicon glyphicon-plus"></span>新增公告</button>
+      <div>
+      	<table class="table table-bordered table-responsive table-striped">
+			<tr>
+				<th>公告ID</th>
+				<th>公告内容</th>
+                        <th>代理ID</th>
+				<th>公告类型</th>
+				<th>操作</th>
+			</tr>
+			<tbody *ngIf="notices">
+				<tr *ngFor="let notice of notices">
+					<td>{{notice.id}}</td>
+					<td>{{notice.content}}</td>
+                              <td>{{notice.managerid}}</td>
+					<td>{{notice.noticetype==1?"全服图片公告":(notice.noticetype==2?"消息公告":"代理公告")}}</td>
+                              <td><button type="button" class="btn btn-warning">编辑</button></td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+      <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
+      <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
+      

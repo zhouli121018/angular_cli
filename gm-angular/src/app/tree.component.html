@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let item of treelists">
+    <a  (click)="itemClick(item)">{{item.title}}</a>
+    <!--调用组件本身并 传值给下级: [treelists]="item.items"-->
+    <app-tree *ngIf="item._open && item.items && item.items.length" [treelists]="item.items"></app-tree>
+  </li>
+</ul>
