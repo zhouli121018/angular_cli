@@ -3,28 +3,7 @@ import {Link} from './link'
 @Component({
   selector: 'app-root',
   styleUrls: ['./app.component.css'],
-  template:`
-      <div id="title">
-        <div class="log">
-          <img src="./assets/img/admin.png" class="img-responsive"/>
-          <p>欢迎 admin 的到来！</p>
-        </div>
-        <div>
-          <button type="button" class="btn btn-danger">退出</button>
-          <button type="button" class="btn btn-warning">修改密码</button>
-        </div>
-      </div>
-      <div class="content">
-      <nav id="nav" >
-          <app-nav [treelists]="links" class="navtree"></app-nav>
-      </nav>
-      <div>
-        <router-outlet></router-outlet>
-      </div>
-      </div>
-      
-   
-  `
+  templateUrl:'./app.component.html'
 })
  // <ul class="nav nav-pills nav-stacked">
  //           <li *ngFor="let le of links" [class.active]="le===selectedUrl" (click)="onSelected(le)">
@@ -44,6 +23,12 @@ import {Link} from './link'
 export class AppComponent {
  
   selectedUrl:Link;
+  isLogin=false;
+  loginInfo={
+    uname:"",
+    psw:"",
+    code:""
+  };
   links=[
     {
       link:'/agent-info',
@@ -83,5 +68,17 @@ export class AppComponent {
   onSelected(item):void{
     this.selectedUrl = item;
   }
- 
+  login():void{
+    console.log(this.loginInfo.uname,this.loginInfo.psw);
+    if(this.loginInfo.uname==""||this.loginInfo.psw==""||this.loginInfo.code==""){
+      alert('账号、密码、验证码不能为空！');
+      return;
+    }else{
+      this.isLogin=true;
+    }
+  }
+
+  logout():void{
+    this.isLogin=false;
+  }
 }
