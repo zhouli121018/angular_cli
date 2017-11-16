@@ -34,7 +34,7 @@ p.total{
     margin:1em 0;
 }
 
-#add-agent,#edit,#charge-agent{
+#add,#edit,#charge-agent{
 	position: fixed;
 	top:0;
 	left:0;
@@ -46,7 +46,7 @@ p.total{
 	padding-top:10%;
 
 }
-#add-agent>div,#edit>div,#charge-agent>div{
+#add>div,#edit>div,#charge-agent>div{
 	background: #fff;
 	width:420px;
 	margin:20px auto;
@@ -56,12 +56,15 @@ p.total{
 	box-shadow: 0 0 26px #041A36;
     border-top: 8px solid #42EC00;
 }
-#add-agent form,#edit form,#charge-agent form{
+#add form,#edit form,#charge-agent form{
 	width:400px;
     margin:20px auto;
 	padding:10px;
 }
-#add-agent h3,#edit h3,#charge-agent h3{
+#add h3,#edit h3,#charge-agent h3{
 	padding-top:10px;
 }
 
+input.sure{
+	margin-top:30px;
+}

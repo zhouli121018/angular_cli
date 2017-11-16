@@ -107,6 +107,10 @@ export class MyVipComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
+  searchInfo={starttime:"",endtime:"",nickname:"",uuid:""};
+  search():void{
+    console.dir(this.searchInfo);
+  }
   
   showChargeForm=false;
   showEditForm=false;

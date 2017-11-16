@@ -36,4 +36,10 @@ export class TouzhuDetailComponent implements OnInit{
 	      this.pageCount = Math.floor(this.statsInfo.length/10)+1;
 	    }
 	  }
+
+
+	searchInfo={starttime:'',endtime:'',invitecode:'',uuid:''};
+  search():void{
+    console.dir(this.searchInfo);
+  }
 }

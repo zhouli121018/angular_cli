@@ -111,22 +111,18 @@ export class MyAgentComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
+
+  searchInfo={starttime:"",endtime:"",invitecode:""};
   showAddForm=false;
   showEditForm=false;
   showChargeForm=false;
-  selectedAgent={
-    aname:'zhoulid',
-    uuid:'123456',
-    invitecode:23442,
-    tel:13798225061,
-    weixin:'wein',
-    qq:512167072,
-    rebate:0.5,
-    rootManager:0,
-    powerId:4
-  }
+  selectedAgent={};
   chargeInfo={uuid:"",mount:""};
   addAgent={};
+
+  search():void{
+    console.dir(this.searchInfo);
+  }
   showAdd():void{
     this.showAddForm=true;
   }

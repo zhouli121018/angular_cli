@@ -10,20 +10,20 @@
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon">开始时间</span>
-                  <input type="date" name="start-time" class="form-control" placeholder="开始时间">
+                  <input type="date" name="start-time" [(ngModel)]="searchInfo.starttime" class="form-control" placeholder="开始时间">
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon">截止时间</span>
-                  <input type="date" name="end-time" class="form-control" placeholder="截止时间">
+                  <input type="date" name="end-time" [(ngModel)]="searchInfo.endtime" class="form-control" placeholder="截止时间">
                 </div>
               </div>
               <div class="form-group">
-                <input type="number" name="invitecode" class="form-control" placeholder="请输入代理邀请码">
+                <input type="number" name="invitecode" [(ngModel)]="searchInfo.invitecode" class="form-control" placeholder="请输入代理邀请码">
               </div>
               <div class="form-group">
-                <input type="button" class="btn btn-success" value="查询">
+                <input type="button" class="btn btn-success" (click)="search()" value="查询">
               </div>
             </form>
     </div>
@@ -64,7 +64,7 @@
 			</tr>
 		</table>
 	</div>
-  <div id="add-agent" *ngIf="showAddForm">
+  <div id="add" *ngIf="showAddForm">
     <div>
       <button type="button" (click)="hideAdd()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       
@@ -118,7 +118,7 @@
           <option value="2">黄金代理</option>
         </select>
         <div class="form-group">
-          <input type="button" (click)="add()" class="btn btn-block btn-success" name="login" value="增加代理" >
+          <input type="button" (click)="add()" class="btn btn-block btn-success sure" value="增加代理" >
         </div>
     </form>
     </div>
@@ -178,7 +178,7 @@
           <option value="2">黄金代理</option>
         </select>
         <div class="form-group">
-          <input type="button" (click)="edit()" class="btn btn-block btn-success" name="login" value="增加代理" >
+          <input type="button" (click)="edit()" class="btn btn-block btn-success sure" name="login" value="增加代理" >
         </div>
     </form>
     </div>
@@ -198,7 +198,7 @@
           <input type="number" [(ngModel)]="chargeInfo.mount" name="mount" id="mount" class="form-control" placeholder="请输入充值钻石数量">
         </div>
         <div class="form-group">
-          <input type="button" (click)="charge()" class="btn btn-block btn-success" name="login" value="充 值" >
+          <input type="button" (click)="charge()" class="btn btn-block btn-success sure" name="login" value="充 值" >
         </div>
     </form>
     </div>

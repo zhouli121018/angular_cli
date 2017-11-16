@@ -38,4 +38,11 @@ export class ExchangeComponent implements OnInit{
 	      this.pageCount = Math.floor(this.statsInfo.length/10)+1;
 	    }
 	  }
+
+
+
+	searchInfo={starttime:'',endtime:'',uuid:''};
+	search():void{
+	    console.dir(this.searchInfo);
+	}
 }

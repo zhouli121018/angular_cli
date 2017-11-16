@@ -41,4 +41,29 @@ export class NoticeComponent implements OnInit{
 	      this.pageCount = Math.floor(this.statsInfo.length/10)+1;
 	    }
 	  }
+
+
+	showAddForm=false;
+	showEditForm=false;
+	addNoticeInfo={content:'',managerid:'',noticetype:''};
+	selectedNotice;
+	showAdd():void{
+		this.showAddForm=true;
+	}
+	showEdit(n):void{
+		this.showEditForm=true;
+		this.selectedNotice=n;
+	}
+	hideAdd():void{
+		this.showAddForm=false;
+	}
+	hideEdit():void{
+		this.showEditForm=false;
+	}
+	add():void{
+		console.dir(this.addNoticeInfo)
+	}
+	edit():void{
+		console.dir(this.selectedNotice);
+	}
 }

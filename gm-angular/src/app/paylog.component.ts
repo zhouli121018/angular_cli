@@ -30,4 +30,9 @@ export class PaylogComponent implements OnInit{
 	    }
 	  }
 
+	searchInfo={starttime:'',endtime:'',invitecode:''};
+	search():void{
+		console.dir(this.searchInfo);
+	}
+
 }

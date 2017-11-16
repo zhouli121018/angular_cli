@@ -84,8 +84,8 @@ import {Component} from '@angular/core';
 							<div class="input-group">
 							  <input type="text" class="form-control">
 							  <div class="input-group-btn">
-							     <input type="button" class="btn btn-primary" value="提现">
-							     <input type="button" class="btn btn-primary" value="刷新">
+							     <input type="button" (click)="tixian(this)" [disabled]="disable==true" class="btn btn-primary" value="提现">
+							     <input type="button" (click)="refresh()" class="btn btn-primary" value="刷新">
 							  </div>
 							</div>
 						</td>
@@ -100,5 +100,13 @@ import {Component} from '@angular/core';
 
 export class AgentInfoComponent {
 	title = "代理信息";
-	
+	disable=false;
+	tixian(this):void{
+		alert('提现');
+		this.disable=true;
+		setTimeout(()=>this.disable=false,2000)
+	}
+	refresh():void{
+		alert('刷新')
+	}
 }

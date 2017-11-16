@@ -2,7 +2,7 @@
       	<span>{{title}}</span>
 		<img src="./assets/img/logo.png"/>
       </h2>
-      <button type="button" class="btn btn-success add-notice"><span class="glyphicon glyphicon-plus"></span>新增公告</button>
+      <button type="button" (click)="showAdd()" class="btn btn-success add-notice"><span class="glyphicon glyphicon-plus"></span>新增公告</button>
       <div>
       	<table class="table table-bordered table-responsive table-striped">
 			<tr>
@@ -18,11 +18,64 @@
 					<td>{{notice.content}}</td>
                               <td>{{notice.managerid}}</td>
 					<td>{{notice.noticetype==1?"全服图片公告":(notice.noticetype==2?"消息公告":"代理公告")}}</td>
-                              <td><button type="button" class="btn btn-warning">编辑</button></td>
+                    <td><button type="button" (click)="showEdit(notice)" class="btn btn-warning">编辑</button></td>
 				</tr>
 			</tbody>
 		</table>
       </div>
+
+        <div id="add" *ngIf="showAddForm">
+		    <div>
+		      <button type="button" (click)="hideAdd()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      
+		      <h3 class="text-center">新增公告信息</h3>
+			    <form>
+			      <div class="form-group">
+			          <label for="content">公告内容：</label>
+			          <textarea rows="6" class="form-control" [(ngModel)]="addNoticeInfo.content" name="content" id="content"></textarea>
+			        </div>
+			        <div class="form-group">
+			          <label for="managerid">代理ID：</label>
+			          <input type="number" [(ngModel)]="addNoticeInfo.managerid" name="managerid" id="managerid" class="form-control" placeholder="请输入代理ID">
+			        </div>
+			        <div><b>公告类型：</b></div>
+			        <select class="form-control" name="noticetype" [(ngModel)]="addNoticeInfo.noticetype">
+			          <option value="1">全服图片公告</option>
+			          <option value="2">消息公告</option>
+			          <option value="3">代理公告</option>
+			        </select>
+			        <div class="form-group">
+			          <input type="button"  (click)="add()" class="btn btn-block btn-success sure"  value="新增公告" >
+			        </div>
+			    </form>
+		    </div>
+        </div>
+
+<div id="edit" *ngIf="showEditForm">
+    <div>
+      <button type="button" (click)="hideEdit()" class="pull-right btn btn-danger" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h3 class="text-center">修改公告信息</h3>
+    <form>
+      <div class="form-group">
+          <label for="content">公告内容：</label>
+          <textarea class="form-control" rows="6" [(ngModel)]="selectedNotice.content" name="content" id="content"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="managerid">代理ID：</label>
+          <input type="number" [(ngModel)]="selectedNotice.managerid" name="managerid" id="managerid" class="form-control">
+        </div>
+        <div><b>公告类型：</b></div>
+        <select class="form-control" name="noticetype" [(ngModel)]="selectedNotice.noticetype">
+          <option value="1">全服图片公告</option>
+          <option value="2">消息公告</option>
+          <option value="3">代理公告</option>
+        </select>
+        <div class="form-group">
+          <input type="button" (click)="edit()" class="btn btn-block btn-success sure" name="login" value="确 定" >
+        </div>
+    </form>
+    </div>
+  </div>
       <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
       <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
       

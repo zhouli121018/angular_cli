@@ -114,4 +114,9 @@ export class StatsComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
+
+  searchInfo={starttime:'',endtime:''};
+  search():void{
+    console.dir(this.searchInfo);
+  }
 }

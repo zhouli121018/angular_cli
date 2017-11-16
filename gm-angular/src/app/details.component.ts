@@ -29,4 +29,8 @@ export class DetailsComponent implements OnInit{
 	    }
 	  }
 
+	searchInfo={starttime:'',endtime:'',invitecode:'',uuid:'',gameId:0};
+	search():void{
+		console.dir(this.searchInfo);
+	}
 }
