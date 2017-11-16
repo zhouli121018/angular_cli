@@ -111,6 +111,58 @@ export class MyAgentComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
-  
-
+  showAddForm=false;
+  showEditForm=false;
+  showChargeForm=false;
+  selectedAgent={
+    aname:'zhoulid',
+    uuid:'123456',
+    invitecode:23442,
+    tel:13798225061,
+    weixin:'wein',
+    qq:512167072,
+    rebate:0.5,
+    rootManager:0,
+    powerId:4
+  }
+  chargeInfo={uuid:"",mount:""};
+  addAgent={};
+  showAdd():void{
+    this.showAddForm=true;
+  }
+  showCharge():void{
+    this.showChargeForm=true;
+  }
+  showEdit(p):void{
+    this.showEditForm=true;
+    this.selectedAgent=p;
+  }
+  add():void{
+    console.dir(this.addAgent);
+    this.showAddForm=false;
+    this.addAgent={};
+  }
+  charge():void{
+    if(this.chargeInfo.uuid==""||this.chargeInfo.mount==""){
+      alert('游戏ID或充值钻石数量不能为空！');
+      return;
+    }
+    console.dir(this.chargeInfo);
+    this.showChargeForm=false;
+    this.chargeInfo={uuid:"",mount:""};
+  }
+  edit():void{
+    console.dir(this.selectedAgent);
+    this.showEditForm=false;
+    this.selectedAgent={};
+  }
+  hideAdd():void{
+    this.showAddForm=false;
+  }
+  hideEdit():void{
+    this.showEditForm=false;
+  }
+  hideCharge():void{
+    this.showChargeForm=false;
+  }
 }

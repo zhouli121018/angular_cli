@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {Link} from './link'
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ import {Link} from './link'
  //             </ul> 
  //           </li>
  //        </ul>
-export class AppComponent {
+export class AppComponent implements OnInit{
  
   selectedUrl:Link;
   isLogin=false;
@@ -29,6 +29,13 @@ export class AppComponent {
     psw:"",
     code:""
   };
+  ngOnInit(): void {
+      if(sessionStorage['login']==1){
+        this.isLogin=true;
+      }else{
+        this.isLogin=false;
+      }
+  }
   links=[
     {
       link:'/agent-info',
@@ -75,10 +82,12 @@ export class AppComponent {
       return;
     }else{
       this.isLogin=true;
+      sessionStorage['login']=1;
     }
   }
 
   logout():void{
     this.isLogin=false;
+    sessionStorage.clear();
   }
 }

@@ -31,7 +31,7 @@ export class MyVipComponent implements OnInit{
 
     datas={
     	link_title:"本周新增会员数量",
-    	x_data:[21231,1212,21231,3213,2222,6666,74],
+    	x_data:["周一","周二","周三","周四","周五","周六","周日"],
  		y_data:[212,425,265,586,333,999,888],
  		y_name:"会员数量",
  		s_name:'新增会员数量'
@@ -107,5 +107,36 @@ export class MyVipComponent implements OnInit{
       data:this.datas.y_data
     }]
   }
+  
+  showChargeForm=false;
+  showEditForm=false;
+  chargeInfo={uuid:"",mount:""};
+  selectedAccount={};
+  showCharge():void{
+    this.showChargeForm=true;
+  }
+  showEdit(a):void{
+    this.showEditForm=true;
+    this.selectedAccount=a;
+  }
+  hideEdit():void{
+    this.showEditForm=false;
+  }
+  hideCharge():void{
+    this.showChargeForm=false;
+  }
+  charge():void{
+    if(this.chargeInfo.uuid==""||this.chargeInfo.mount==""){
+      alert('游戏ID或充值钻石数量不能为空！');
+      return;
+    }
+    console.dir(this.chargeInfo);
+    this.showChargeForm=false;
+    this.chargeInfo={uuid:"",mount:""};
+  }
+  edit():void{
+    console.dir(this.selectedAccount);
+  }
+
 
 }
