@@ -45,7 +45,6 @@ p.total{
 	height:100%;
 	z-index: 100;
 	padding-top:10%;
-
 }
 
 #add>div,#edit>div,#charge-agent>div{
@@ -58,8 +57,12 @@ p.total{
 	box-shadow: 0 0 26px #041A36;
     border-top: 8px solid #42EC00;
 }
+@media screen and (max-width:420px){
+   #add>div,#edit>div,#charge-agent>div{
+   		width:350px;
+   }
+}
 #add form,#edit form,#charge-agent form{
-	width:400px;
     margin:20px auto;
 	padding:10px;
 }
