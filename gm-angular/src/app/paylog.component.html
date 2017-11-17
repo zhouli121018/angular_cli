@@ -26,24 +26,28 @@
       	    </form>
 		</div>
 		<h4>提现总金额：元</h4>
-      	<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>提现账号</th>
-				<th>姓名</th>
-                        <th>提现金额</th>
-				<th>是否处理</th>
-				<th>提现时间</th>
-			</tr>
-			<tbody *ngIf="paylogs">
-				<tr *ngFor="let paylog of paylogs">
-					<td>{{paylog.invitecode}}</td>
-					<td>{{paylog.name}}</td>
+      	<div class="table-responsive">
+                  <table class="table table-bordered table-striped">
+                  <thead>
+                        <tr>
+                              <th>提现账号</th>
+                              <th>姓名</th>
+                              <th>提现金额</th>
+                              <th>是否处理</th>
+                              <th>提现时间</th>
+                        </tr>
+                  </thead>
+                  <tbody *ngIf="paylogs">
+                        <tr *ngFor="let paylog of paylogs">
+                              <td>{{paylog.invitecode}}</td>
+                              <td>{{paylog.name}}</td>
                               <td>{{paylog.money}}</td>
-					<td>{{paylog.status}}</td>
-					<td>{{paylog.createtime}}</td>
-				</tr>
-			</tbody>
-		</table>
+                              <td>{{paylog.status}}</td>
+                              <td>{{paylog.createtime}}</td>
+                        </tr>
+                  </tbody>
+            </table> 
+            </div>
       </div>
       <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
       <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>

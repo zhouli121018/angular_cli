@@ -36,30 +36,34 @@
       	    </form>
 		</div>
 		<h4>充值总金额：</h4>
-      	<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>充值ID</th>
-				<th>用户昵称</th>
-                        <th>充值金额</th>
-				<th>购钻数量</th>
-				<th>充值时间</th>
-				<th>充值结果</th>
-                        <th>代理邀请码</th>
-                        <th>代理级别</th>
-			</tr>
-			<tbody *ngIf="details">
-				<tr *ngFor="let detail of details">
-					<td>{{detail.uuid}}</td>
-					<td>{{detail.nickname}}</td>
+      	<div class="table-responsive">
+                  <table class="table table-bordered table-striped">
+                  <thead>
+                        <tr>
+                              <th>充值ID</th>
+                              <th>用户昵称</th>
+                              <th>充值金额</th>
+                              <th>购钻数量</th>
+                              <th>充值时间</th>
+                              <th>充值结果</th>
+                              <th>代理邀请码</th>
+                              <th>代理级别</th>
+                        </tr>
+                  </thead>
+                  <tbody *ngIf="details">
+                        <tr *ngFor="let detail of details">
+                              <td>{{detail.uuid}}</td>
+                              <td>{{detail.nickname}}</td>
                               <td>{{detail.money}}</td>
-					<td>{{detail.count}}</td>
-					<td>{{detail.createtime}}</td>
+                              <td>{{detail.count}}</td>
+                              <td>{{detail.createtime}}</td>
                               <td>{{detail.result}}</td>
                               <td>{{detail.invitecode}}</td>
-					<td>{{detail.powerid}} </td>
-				</tr>
-			</tbody>
-		</table>
+                              <td>{{detail.powerid}} </td>
+                        </tr>
+                  </tbody>
+            </table>
+            </div>
       </div>
       <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
       <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>

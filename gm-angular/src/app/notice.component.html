@@ -3,15 +3,17 @@
 		<img src="./assets/img/logo.png"/>
       </h2>
       <button type="button" (click)="showAdd()" class="btn btn-success add-notice"><span class="glyphicon glyphicon-plus"></span>新增公告</button>
-      <div>
-      	<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>公告ID</th>
-				<th>公告内容</th>
-                        <th>代理ID</th>
-				<th>公告类型</th>
-				<th>操作</th>
-			</tr>
+      <div class="table-responsive">
+      	<table class="table table-bordered  table-striped">
+      		<thead>
+      			<tr>
+					<th>公告ID</th>
+					<th>公告内容</th>
+	                        <th>代理ID</th>
+					<th>公告类型</th>
+					<th>操作</th>
+				</tr>
+      		</thead>
 			<tbody *ngIf="notices">
 				<tr *ngFor="let notice of notices">
 					<td>{{notice.id}}</td>

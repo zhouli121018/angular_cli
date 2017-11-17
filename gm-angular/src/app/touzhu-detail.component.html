@@ -29,40 +29,48 @@
             </form>
     </div>
     <h4>投注红钻总数：{{0}} 颗</h4>
-		<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>投注人游戏ID</th>
-        <th>昵称</th>
-				<th>期号</th>
-        <th>投注红钻</th>
-        <th>投注时间</th>
-        <th>投注</th>
-        <th>投注结果</th>
-        <th>开奖号码</th>
-        <th>卡面值</th>
-        <th>卡张数</th>
-        <th>直属代理邀请码</th>
-        <th>直属代理级别</th>
-        <th>上级代理邀请码</th>
-        <th>上级代理级别</th>
-			</tr>
-			<tr *ngFor="let detail of touzhudetails">
-				<td>{{detail.uuid}}</td>
-				<td>{{detail.nickname}}</td>
-				<td>{{detail.serialnum}}</td>
-        <td>{{detail.betmount}}</td>
-        <td>{{detail.createtime}}</td>
-        <td>{{detail.bettype}}</td>
-        <td>{{detail.betresult}}</td>
-        <td>{{detail.lotresult}}</td>
-        <td>{{detail.facevalue}}</td>
-        <td>{{detail.cardcount}}</td>
-        <td>{{detail.invitecode}}</td>
-        <td>{{detail.powerid}}</td>
-        <td>{{detail.invitecode1}}</td>
-        <td>{{detail.powerid1}}</td>
-			</tr>
-		</table>
+    <div class="table-responsive">
+      <table class="table table-bordered  table-striped">
+        <thead>
+          <tr>
+            <th>投注人游戏ID</th>
+            <th>昵称</th>
+            <th>期号</th>
+            <th>投注红钻</th>
+            <th>投注时间</th>
+            <th>投注</th>
+            <th>投注结果</th>
+            <th>开奖号码</th>
+            <th>卡面值</th>
+            <th>卡张数</th>
+            <th>直属代理邀请码</th>
+            <th>直属代理级别</th>
+            <th>上级代理邀请码</th>
+            <th>上级代理级别</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detail of touzhudetails">
+            <td>{{detail.uuid}}</td>
+            <td>{{detail.nickname}}</td>
+            <td>{{detail.serialnum}}</td>
+            <td>{{detail.betmount}}</td>
+            <td>{{detail.createtime}}</td>
+            <td>{{detail.bettype}}</td>
+            <td>{{detail.betresult}}</td>
+            <td>{{detail.lotresult}}</td>
+            <td>{{detail.facevalue}}</td>
+            <td>{{detail.cardcount}}</td>
+            <td>{{detail.invitecode}}</td>
+            <td>{{detail.powerid}}</td>
+            <td>{{detail.invitecode1}}</td>
+            <td>{{detail.powerid1}}</td>
+          </tr>
+        </tbody>
+      
+    </table>
+    </div>
+		
 	</div>
   <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
   <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>

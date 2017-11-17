@@ -23,30 +23,36 @@
             </form>
     </div>
     <h4>投注金额汇总(￥)：{{0}} 元</h4>
-		<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>姓名</th>
-        <th>代理编号</th>
-				<th>手机号</th>
-        <th>微信号</th>
-        <th>邀请码</th>
-        <th>游戏用户ID</th>
-        <th>会员数</th>
-        <th>投注金额(元)</th>
-        <th>代理级别</th>
-			</tr>
-			<tr *ngFor="let stat of stats">
-				<td>{{stat.name}}</td>
-				<td>{{stat.id}}</td>
-				<td>{{stat.tel}}</td>
-        <td>{{stat.weixin}}</td>
-        <td>{{stat.invitecode}}</td>
-        <td>{{stat.uuid}}</td>
-        <td>{{stat.accountnumber}}</td>
-        <td>{{stat.money}}</td>
-        <td>{{stat.powerid}}</td>
-			</tr>
-		</table>
+		<div class="table-responsive">
+        <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>代理编号</th>
+          <th>手机号</th>
+          <th>微信号</th>
+          <th>邀请码</th>
+          <th>游戏用户ID</th>
+          <th>会员数</th>
+          <th>投注金额(元)</th>
+          <th>代理级别</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stat of stats">
+          <td>{{stat.name}}</td>
+          <td>{{stat.id}}</td>
+          <td>{{stat.tel}}</td>
+          <td>{{stat.weixin}}</td>
+          <td>{{stat.invitecode}}</td>
+          <td>{{stat.uuid}}</td>
+          <td>{{stat.accountnumber}}</td>
+          <td>{{stat.money}}</td>
+          <td>{{stat.powerid}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
 	</div>
   <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
   <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>

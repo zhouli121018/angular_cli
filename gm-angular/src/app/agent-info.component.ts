@@ -12,8 +12,8 @@ import {Component} from '@angular/core';
     	<p class="agent-info-tips">代理须知：各位提款时候如果发生报错信息，请先检查可提现金额是否超过100。如是其他错误，请稍后再次尝试或联系上级代理。</p>
     	<div class="basic-info">
     		<p class="text-center">我的基本信息</p>
-    		<div>
-                <table class="table table-bordered table-responsive table-striped">
+    		<div class="table-responsive">
+                <table class="table table-bordered  table-striped">
 					<tr>
 						<td>游戏账号ID:</td>
 						<td>135818</td>
@@ -52,8 +52,8 @@ import {Component} from '@angular/core';
 
     	<div class="money-info">
     		<p class="text-center">金额信息</p>
-    		<div>
-                <table class="table table-bordered table-responsive table-striped">
+    		<div class="table-responsive">
+                <table class="table table-bordered  table-striped">
 					<tr>
 						<td>可以金额:</td>
 						<td>1256.23</td>

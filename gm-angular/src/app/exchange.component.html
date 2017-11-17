@@ -25,24 +25,31 @@
               </div>
             </form>
     </div>
-		<table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>玩家ID</th>
-        <th>玩家昵称</th>
-				<th>兑换金额</th>
-        <th>兑换时间</th>
-        <th>兑换序列号</th>
-        <th>兑换状态</th>
-			</tr>
-			<tr *ngFor="let exchange of exchanges">
-				<td>{{exchange.uuid}}</td>
-				<td>{{exchange.nickname}}</td>
-				<td>{{exchange.money}}</td>
-        <td>{{exchange.createtime}}</td>
-        <td>{{exchange.randomnum}}</td>
-        <td>{{exchange.status}}</td>
-			</tr>
-		</table>
+    <div class="table-responsive">
+      <table class="table table-bordered  table-striped">
+        <thead>
+          <tr>
+            <th>玩家ID</th>
+            <th>玩家昵称</th>
+            <th>兑换金额</th>
+            <th>兑换时间</th>
+            <th>兑换序列号</th>
+            <th>兑换状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let exchange of exchanges">
+            <td>{{exchange.uuid}}</td>
+            <td>{{exchange.nickname}}</td>
+            <td>{{exchange.money}}</td>
+            <td>{{exchange.createtime}}</td>
+            <td>{{exchange.randomnum}}</td>
+            <td>{{exchange.status}}</td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+		
 	</div>
   <app-paging [pageIndex]="this.pageIndex" [pageCount]="this.pageCount" (change)="bindpage($event)"></app-paging>
   <p class="total">共有 <b>{{totalNum}}</b> 条记录</p>
