@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import { OnInit } from '@angular/core';
 import {Agent} from './agent';
 import {AgentService} from './agent.service';
+import * as $ from 'jquery';
+
 
 @Component({
 	selector:'my-agent',
@@ -11,13 +13,17 @@ import {AgentService} from './agent.service';
 export class MyAgentComponent implements OnInit{
 	title = "我的代理";
 	agents:Agent[];
+  lists=[
+    {na:"周莉",age:18,childAgent:[{na:"子",age:2,childAgent:[]}]},
+    {na:"zhis",age:19,childAgent:[]}
+  ];
 	constructor(private agentService:AgentService){}
     getAgents():void{
     	this.agents=this.agentService.getAgents();
     };
     
 	ngOnInit(): void {
-	    this.bindpage(1);
+      this.bindpage(1);
       this.agentService.getHeroes().then(data=>console.log(data));
 	}
   pageIndex = 1;

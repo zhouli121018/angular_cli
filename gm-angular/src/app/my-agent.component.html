@@ -28,41 +28,58 @@
             </form>
     </div>
     <div class='table-responsive'>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <th>姓名</th>
+          <th>年龄</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let list of lists" [title]="list.up">
+            <td>{{list.na}}</td>
+            <td>{{list.age}}</td>
+          </tr>
+        </tbody>
+      </table>
       <table class="table table-bordered  table-striped">
-      <tr>
-        <th>代理姓名</th>
-        <th>代理编号</th>
-        <th>手机号</th>
-        <th>微信号</th>
-        <th>QQ号</th>
-        <th>邀请码</th>
-        <th>游戏用户ID</th>
-        <th>会员数</th>
-        <th>金额</th>
-        <th>代理状态</th>
-        <th>分成比例</th>
-        <th>是否开代理</th>
-        <th>代理级别</th>
-        <th>编辑</th>
-      </tr>
-      <tr *ngFor="let agent of agents">
-        <td>{{agent.id}}</td>
-        <td>{{agent.name}}</td>
-        <td>{{agent.weixin}}</td>
-        <td>{{agent.id}}</td>
-        <td>{{agent.name}}</td>
-        <td>{{agent.weixin}}</td>
-        <td>{{agent.id}}</td>
-        <td>{{agent.name}}</td>
-        <td>{{agent.weixin}}</td>
-        <td>{{agent.id}}</td>
-        <td>{{agent.name}}</td>
-        <td>{{agent.weixin}}</td>
-        <td>{{agent.weixin}}</td>
-        <td>
-          <input type="button" (click)="showEdit(agent)" class="btn btn-warning btn-sm"  value="修改">
-        </td>
-      </tr>
+        <thead>
+          <tr>
+            <th>代理姓名</th>
+            <th>代理编号</th>
+            <th>手机号</th>
+            <th>微信号</th>
+            <th>QQ号</th>
+            <th>邀请码</th>
+            <th>游戏用户ID</th>
+            <th>会员数</th>
+            <th>金额</th>
+            <th>代理状态</th>
+            <th>分成比例</th>
+            <th>是否开代理</th>
+            <th>代理级别</th>
+            <th>编辑</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let agent of agents">
+              <td>{{agent.id}}</td>
+              <td>{{agent.name}}</td>
+              <td>{{agent.weixin}}</td>
+              <td>{{agent.id}}</td>
+              <td>{{agent.name}}</td>
+              <td>{{agent.weixin}}</td>
+              <td>{{agent.id}}</td>
+              <td>{{agent.name}}</td>
+              <td>{{agent.weixin}}</td>
+              <td>{{agent.id}}</td>
+              <td>{{agent.name}}</td>
+              <td>{{agent.weixin}}</td>
+              <td>{{agent.weixin}}</td>
+              <td>
+                <input type="button" (click)="showEdit(agent)" class="btn btn-warning btn-sm"  value="修改">
+              </td>
+            </tr>
+        </tbody>
+      
     </table>
     </div>
 		
