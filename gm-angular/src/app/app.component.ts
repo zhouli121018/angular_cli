@@ -29,7 +29,15 @@ export class AppComponent implements OnInit{
     psw:"",
     code:""
   };
+  showIcon=false;
+  showNavbar=true;
   ngOnInit(): void {
+      console.log(screen.width);
+      if(screen.width<=768){
+        this.showNavbar=false;
+        this.showIcon=true;
+      }
+
       if(sessionStorage['login']){
         this.isLogin=true;
         this.loginInfo.uname=sessionStorage['login'];
@@ -91,4 +99,10 @@ export class AppComponent implements OnInit{
     this.isLogin=false;
     sessionStorage.clear();
   }
+
+  showNav():void{
+    this.showNavbar=!this.showNavbar;
+  }
+
+
 }

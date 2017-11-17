@@ -9,12 +9,12 @@
   border:1px solid #ddd;
   border-bottom: none;
 }
-.content #nav{
+/*.content #nav{
    margin-left:1em;
-}
+}*/
 #nav{
    background-color:#324157;
-   min-width:12%;
+   min-width:200px;
    padding-top:2em;
 }
 

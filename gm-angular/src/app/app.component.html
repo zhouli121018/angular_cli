@@ -9,13 +9,14 @@
             <button type="button" class="btn btn-warning">修改密码</button>
           </div>
         </div>
+        <button *ngIf="showIcon" id="navicon" (click)="showNav()" class="btn"><span class="glyphicon glyphicon-th-list"></span></button>
         <div class="content">
-        <nav id="nav" >
-            <app-nav [treelists]="links" class="navtree"></app-nav>
-        </nav>
-        <div id="main">
-          <router-outlet></router-outlet>
-        </div>
+          <nav id="nav" *ngIf="showNavbar">
+              <app-nav [treelists]="links" class="navtree"></app-nav>
+          </nav>
+          <div id="main">
+            <router-outlet></router-outlet>
+          </div>
         </div>
 </div>
 <div id="login" *ngIf="!isLogin">

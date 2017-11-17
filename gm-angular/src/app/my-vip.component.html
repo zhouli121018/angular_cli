@@ -1,61 +1,67 @@
       <h2>
       	<span>{{title}}</span>
-		<img src="./assets/img/logo.png"/>
+		  <img src="./assets/img/logo.png"/>
       </h2>
-      <div>
             <input type="button" class="btn btn-success" (click)="showCharge()" value="给玩家充值" />
             <div class="searchInfo">
-      	    <form class="form-inline form-btn" name="search-form">
-      	    	<div class="form-group">
-      	    		<div class="input-group">
-      	    			<span class="input-group-addon">开始时间</span>
-      	    			<input type="date" name="start-time" [(ngModel)]="this.searchInfo.starttime" class="form-control" placeholder="开始时间">
-      	    		</div>
-      	    	</div>
-      	    	<div class="form-group">
-      	    		<div class="input-group">
-      	    			<span class="input-group-addon">截止时间</span>
-      	    			<input type="date" name="end-time" [(ngModel)]="this.searchInfo.endtime" class="form-control" placeholder="截止时间">
-      	    		</div>
-      	    	</div>
-      	    	<div class="form-group">
-      	    		<input type="text" name="nickname" [(ngModel)]="this.searchInfo.nickname" class="form-control" placeholder="请输入玩家昵称">
-      	    	</div>
-      	    	<div class="form-group">
-      	    		<input type="number" name="uuid" [(ngModel)]="this.searchInfo.uuid" class="form-control" placeholder="请输入玩家ID">
-      	    	</div>
-      	    	<div class="form-group">
-      	    		<input type="button" class="btn btn-primary" (click)="search()" value="查询">
-      	    	</div>
-      	    </form>
-	     </div>
-            <table class="table table-bordered table-responsive table-striped">
-			<tr>
-				<th>用户ID</th>
-				<th>用户昵称</th>
-                        <th>剩余蓝钻</th>
-				<th>剩余红钻</th>
-				<th>状态</th>
-				<th>注册时间</th>
-                        <th>绑定的邀请码</th>
-                        <th>编辑</th>
-			</tr>
-			<tbody *ngIf="vips">
-				<tr *ngFor="let vip of vips">
-					<td>{{vip.uuid}}</td>
-					<td>{{vip.nickname}}</td>
-                              <td>{{vip.roomcard}}</td>
-					<td>{{vip.redcard}}</td>
-					<td>{{vip.status}}</td>
-                              <td>{{vip.createtime}}</td>
-                              <td>{{vip.invitecode}}</td>
-					<td>
-                                    <input type="button" (click)="showEdit(vip)" class="btn btn-warning" value="编辑玩家信息" />
-                              </td>
-				</tr>
-			</tbody>
-	      </table>
-      </div>
+          	    <form class="form-inline form-btn" name="search-form">
+          	    	<div class="form-group">
+          	    		<div class="input-group">
+          	    			<span class="input-group-addon">开始时间</span>
+          	    			<input type="date" name="start-time" [(ngModel)]="this.searchInfo.starttime" class="form-control" placeholder="开始时间">
+          	    		</div>
+          	    	</div>
+          	    	<div class="form-group">
+          	    		<div class="input-group">
+          	    			<span class="input-group-addon">截止时间</span>
+          	    			<input type="date" name="end-time" [(ngModel)]="this.searchInfo.endtime" class="form-control" placeholder="截止时间">
+          	    		</div>
+          	    	</div>
+          	    	<div class="form-group">
+          	    		<input type="text" name="nickname" [(ngModel)]="this.searchInfo.nickname" class="form-control" placeholder="请输入玩家昵称">
+          	    	</div>
+          	    	<div class="form-group">
+          	    		<input type="number" name="uuid" [(ngModel)]="this.searchInfo.uuid" class="form-control" placeholder="请输入玩家ID">
+          	    	</div>
+          	    	<div class="form-group">
+          	    		<input type="button" class="btn btn-primary" (click)="search()" value="查询">
+          	    	</div>
+          	    </form>
+	          </div>
+        
+      
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                  <tr>
+                    <th>用户ID</th>
+                    <th>用户昵称</th>
+                                    <th>剩余蓝钻</th>
+                    <th>剩余红钻</th>
+                    <th>状态</th>
+                    <th>注册时间</th>
+                                    <th>绑定的邀请码</th>
+                                    <th>编辑</th>
+                  </tr>
+              </thead>
+              <tbody *ngIf="vips">
+                <tr *ngFor="let vip of vips">
+                  <td>{{vip.uuid}}</td>
+                  <td>{{vip.nickname}}</td>
+                                      <td>{{vip.roomcard}}</td>
+                  <td>{{vip.redcard}}</td>
+                  <td>{{vip.status}}</td>
+                                      <td>{{vip.createtime}}</td>
+                                      <td>{{vip.invitecode}}</td>
+                  <td>
+                                            <input type="button" (click)="showEdit(vip)" class="btn btn-warning" value="编辑玩家信息" />
+                                      </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+       
+      
 
       <div id="charge-agent" *ngIf="showChargeForm">
             <div>
