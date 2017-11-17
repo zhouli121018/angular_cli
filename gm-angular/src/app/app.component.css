@@ -71,28 +71,36 @@
 }
 
 #login{
-  /*position: relative;*/
+  position: fixed;
   display: flex;
   width:100%;
   height:100%;
   color:#fff;
   align-items: center;
   justify-content: center;
-  background:url('../assets/img/login-bg.jpg') no-repeat fixed 50%;
-    background-size: 100% 100%;
+  background:url('../assets/img/login-bg2.jpg') no-repeat fixed 50%;
+  background-size: 100% 100%;
+  padding-top:100px;
+  padding-bottom: 100px;
 }
 #login>img{
   width:100%;
   height:100%;
 }
+#logo{
+  margin:0 auto;
+}
+#log{
+  margin-top:1em;
+}
 #login>div{
   background:rgba(146,150,155,.3);
   /*position: absolute;*/
   width:60%;
-  padding:4% 5% 5%;
-  margin:15%;
+  padding:2% 0;
   border-radius: 8px;
   border:1px solid #AFAFAC;
+  max-width:500px;
 }
 #login>div>form{
   width:80%;
