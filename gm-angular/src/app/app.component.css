@@ -12,13 +12,19 @@
 /*.content #nav{
    margin-left:1em;
 }*/
+#navIcon{
+  width:20px;
+  background: #38C6D9;
+  color:#fff;
+
+}
 #nav{
    background-color:#324157;
    min-width:200px;
    padding-top:2em;
 }
 #main{
-  width:100%;
+  width:98%;
 }
 /*#main{
   background: url('../assets/img/m-bg.jpg');

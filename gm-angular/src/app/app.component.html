@@ -10,11 +10,11 @@
             <button type="button" class="btn btn-warning">修改密码</button>
           </div>
         </div>
-        <button *ngIf="showIcon" id="navicon" (click)="showNav()" class="btn"><span class="glyphicon glyphicon-th-list"></span></button>
         <div class="content">
           <nav id="nav" *ngIf="showNavbar">
               <app-nav [treelists]="links" class="navtree"></app-nav>
           </nav>
+          <div (click)="showNav()" id="navIcon"><span *ngIf="showNavbar"><b>&lt;</b></span><span *ngIf="!showNavbar"><b>&gt;</b></span></div>
           <div id="main">
             <router-outlet></router-outlet>
           </div>
