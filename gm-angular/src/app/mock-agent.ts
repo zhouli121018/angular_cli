@@ -1,9 +1,30 @@
 import {Agent} from './agent';
 export const AGENTS : Agent[] =[
-	{id:1,name:'张三',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-    {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-    {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-    {id:1,name:'张三',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-    {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'},
-    {id:1,name:'张',uuid:123456,weixin:'zlhou',tel:'13798225061'}
+	{id:1,name:'张1',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[
+		{id:1,name:'张1',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+		{id:1,name:'张2',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[
+			{id:1,name:'张6',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+		    {id:1,name:'张7',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+		    {id:1,name:'张8',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+		    {id:1,name:'张9',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[
+		    	{id:1,name:'张10',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+			    {id:1,name:'张11',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+			    {id:1,name:'张12',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]}
+		    ]}
+		]},
+	    {id:1,name:'张3',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+	    {id:1,name:'张4',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+	    {id:1,name:'张5',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+	]},
+    {id:1,name:'张2',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张3',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张4',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张5',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张6',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张7',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张8',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张9',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张10',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张11',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]},
+    {id:1,name:'张12',uuid:123456,weixin:'zlhou',tel:'13798225061',qq:'512167072',invitecode:'23442',money:'88',childAgent:[]}
 ]

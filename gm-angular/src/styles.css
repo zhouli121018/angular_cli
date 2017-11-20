@@ -1,4 +1,6 @@
 @import "assets/bootstrap/bootstrap.min.css";
+@import "assets/treegrid/jquery.treegrid.css";
+
 
 body{
 	/*padding:0.5em;*/

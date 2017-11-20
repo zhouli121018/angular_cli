@@ -14,17 +14,124 @@ export class MyAgentComponent implements OnInit{
 	title = "我的代理";
 	agents:Agent[];
   lists=[
-    {na:"周莉",age:18,childAgent:[{na:"子",age:2,childAgent:[]}]},
-    {na:"zhis",age:19,childAgent:[]}
+    {na:"周莉",age:18,childAgent:[{na:"子",age:2,childAgent:[{na:"zhis1",age:19,childAgent:[]},{na:"zhis2",age:19,childAgent:[]}]}]},
+    {na:"zhis2",age:19,childAgent:[]},
+    {na:"zhis3",age:19,childAgent:[]},
+    {na:"zhis4",age:19,childAgent:[]},
+    {na:"zhis5",age:19,childAgent:[]}
   ];
 	constructor(private agentService:AgentService){}
     getAgents():void{
     	this.agents=this.agentService.getAgents();
     };
-    
+  tr="";
+  inittr(arr):void{
+    var html="";
+    var n=1;
+    var m=1;
+    var l=1;
+    var o=1;
+    for(var i=0;i<arr.length;i++){
+      html+=`
+      <tr class="${'treegrid-'+n}">
+        <td>${arr[i].name}</td>
+        <td>${arr[i].id}</td>
+        <td>${arr[i].tel}</td>
+        <td>${arr[i].weixin}</td>
+        <td>${arr[i].qq}</td>
+        <td>${arr[i].invitecode}</td>
+        <td>${arr[i].uuid}</td>
+        <td>${arr[i].name}</td>
+        <td>${arr[i].money}</td>
+        <td>${arr[i].name}</td>
+        <td>${arr[i].id}</td>
+        <td>${arr[i].weixin}</td>
+        <td>${arr[i].tel}</td>
+        <td><button type="button" class="btn btn-warning btn-sm" title='${JSON.stringify(arr[i])}'>修改</button></td>
+      </tr>`;
+      m=n;
+      n++;
+      if(arr[i].childAgent.length>0){
+        for(var j=0;j<arr[i].childAgent.length;j++){
+          var p=arr[i].childAgent[j];
+          html+=`
+            <tr class="${'treegrid-'+n} ${'treegrid-parent-'+m}" >
+              <td>${p.name}</td>
+              <td>${p.id}</td>
+              <td>${p.tel}</td>
+              <td>${p.weixin}</td>
+              <td>${p.qq}</td>
+              <td>${p.invitecode}</td>
+              <td>${p.uuid}</td>
+              <td>${p.name}</td>
+              <td>${p.money}</td>
+              <td>${p.name}</td>
+              <td>${p.id}</td>
+              <td>${p.weixin}</td>
+              <td>${p.tel}</td>
+              <td><button type="button" class="btn btn-warning btn-sm" title='${JSON.stringify(p)}'>修改</button></td>
+            </tr>
+          `;
+          l=n;
+          n++;
+          if(p.childAgent.length>0){
+            for(var k=0;k<p.childAgent.length;k++){
+              var q=p.childAgent[k];
+              html+=`
+                <tr class="${'treegrid-'+n} ${'treegrid-parent-'+l}" >
+                  <td>${q.name}</td>
+                  <td>${q.id}</td>
+                  <td>${q.tel}</td>
+                  <td>${q.weixin}</td>
+                  <td>${q.qq}</td>
+                  <td>${q.invitecode}</td>
+                  <td>${q.uuid}</td>
+                  <td>${q.name}</td>
+                  <td>${q.money}</td>
+                  <td>${q.name}</td>
+                  <td>${q.id}</td>
+                  <td>${q.weixin}</td>
+                  <td>${q.tel}</td>
+                  <td><button type="button" class="btn btn-warning btn-sm" title='${JSON.stringify(q)}'>修改</button></td>
+                </tr>
+              `;
+              o=n;
+              n++;
+              if(q.childAgent.length>0){
+                for(var s=0;s<q.childAgent.length;s++){
+                    var r=q.childAgent[s];
+                    html+=`
+                      <tr class="${'treegrid-'+n} ${'treegrid-parent-'+o}" >
+                        <td>${r.name}</td>
+                        <td>${r.id}</td>
+                        <td>${r.tel}</td>
+                        <td>${r.weixin}</td>
+                        <td>${r.qq}</td>
+                        <td>${r.invitecode}</td>
+                        <td>${r.uuid}</td>
+                        <td>${r.id}</td>
+                        <td>${r.money}</td>
+                        <td>${r.name}</td>
+                        <td>${r.id}</td>
+                        <td>${r.weixin}</td>
+                        <td>${r.tel}</td>
+                        <td><button type="button" class="btn btn-warning btn-sm" title='${JSON.stringify(r)}'>修改</button></td>
+                      </tr>
+                    `;
+                }
+                
+              }
+            }
+          }
+        }
+      }
+    }
+    this.tr=html;
+  }
 	ngOnInit(): void {
       this.bindpage(1);
       this.agentService.getHeroes().then(data=>console.log(data));
+     
 	}
   pageIndex = 1;
   pageCount = 1;
@@ -32,6 +139,16 @@ export class MyAgentComponent implements OnInit{
   private bindpage(event:number):void {
     var agentsInfo = this.agentService.getAgents();
     this.agents = agentsInfo.slice((event-1)*10,event*10);
+    this.inittr(this.agents);
+    $('#agentTable tbody').html(this.tr);
+    $('.tree').treegrid();
+    $('.tree').treegrid('collapseAll');
+    var _this=this;
+      $('#agentTable tbody button').click(function(){
+        var param =JSON.parse($(this).attr('title'));
+        console.log(param);
+          _this.showEdit(param);
+      })
     this.pageIndex = event;
     this.totalNum = agentsInfo.length;
     if(agentsInfo.length%10==0){

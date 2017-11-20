@@ -28,19 +28,7 @@
             </form>
     </div>
     <div class='table-responsive'>
-      <table class="table table-bordered table-striped">
-        <thead>
-          <th>姓名</th>
-          <th>年龄</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let list of lists" [title]="list.up">
-            <td>{{list.na}}</td>
-            <td>{{list.age}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="table table-bordered  table-striped">
+      <table class="tree table table-bordered table-striped" id="agentTable">
         <thead>
           <tr>
             <th>代理姓名</th>
@@ -60,27 +48,9 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let agent of agents">
-              <td>{{agent.id}}</td>
-              <td>{{agent.name}}</td>
-              <td>{{agent.weixin}}</td>
-              <td>{{agent.id}}</td>
-              <td>{{agent.name}}</td>
-              <td>{{agent.weixin}}</td>
-              <td>{{agent.id}}</td>
-              <td>{{agent.name}}</td>
-              <td>{{agent.weixin}}</td>
-              <td>{{agent.id}}</td>
-              <td>{{agent.name}}</td>
-              <td>{{agent.weixin}}</td>
-              <td>{{agent.weixin}}</td>
-              <td>
-                <input type="button" (click)="showEdit(agent)" class="btn btn-warning btn-sm"  value="修改">
-              </td>
-            </tr>
+         
         </tbody>
-      
-    </table>
+      </table>
     </div>
 		
 	</div>
@@ -151,8 +121,8 @@
       <h3 class="text-center">修改代理信息</h3>
     <form>
       <div class="form-group">
-          <label for="aname">姓名：</label>
-          <input type="text" [(ngModel)]="selectedAgent.aname" name="aname" id="aname" autofocus class="form-control" placeholder="请输入代理姓名">
+          <label for="name">姓名：</label>
+          <input type="text" [(ngModel)]="selectedAgent.name" name="name" id="name" autofocus class="form-control" placeholder="请输入代理姓名">
         </div>
         <div class="form-group">
           <label for="uuid">玩家ID：</label>
